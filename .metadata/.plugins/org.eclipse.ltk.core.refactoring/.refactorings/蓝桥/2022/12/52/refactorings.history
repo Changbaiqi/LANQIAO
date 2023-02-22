@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;lanqiao.阵&apos; to &apos;最大子矩阵&apos;&#x0D;&#x0A;- Original project: &apos;蓝桥&apos;&#x0D;&#x0A;- Original element: &apos;lanqiao.阵&apos;&#x0D;&#x0A;- Renamed element: &apos;lanqiao.最大子矩阵&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;阵&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;lanqiao{阵.java[阵" matchStrategy="1" name="最大子矩阵" qualified="false" references="true" similarDeclarations="false" stamp="1671368220371" textual="false" version="1.0"/>
+</session>

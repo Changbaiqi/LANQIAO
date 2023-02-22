@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 6 elements from project &apos;蓝桥&apos;&#x0D;&#x0A;- Original project: &apos;蓝桥&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     lanqiao.A.java&#x0D;&#x0A;     lanqiao.C.java&#x0D;&#x0A;     lanqiao.D.java&#x0D;&#x0A;     lanqiao.E.java&#x0D;&#x0A;     lanqiao.F.java&#x0D;&#x0A;     lanqiao.G.java" description="Delete elements" element1="/src&lt;lanqiao{F.java" element2="/src&lt;lanqiao{A.java" element3="/src&lt;lanqiao{D.java" element4="/src&lt;lanqiao{E.java" element5="/src&lt;lanqiao{G.java" element6="/src&lt;lanqiao{C.java" elements="6" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1649463241912" subPackages="false" version="1.0"/>
+</session>
