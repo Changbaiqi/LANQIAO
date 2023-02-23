@@ -1,0 +1,21 @@
+package lanqiao;
+
+public class EÍæ¾ßÉß {
+
+	static long sum = 0l;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static void dfs(int y,int x,int step) {
+		
+		if(step==16) {
+			++sum;
+		}
+		
+		
+		
+	}
+
+}

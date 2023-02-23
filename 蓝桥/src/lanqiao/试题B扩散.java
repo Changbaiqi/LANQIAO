@@ -23,12 +23,49 @@ import java.util.HashSet;
  *
  */
 public class  ‘Ã‚B¿©…¢ {
+	static long sum = 0;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		HashSet<Long> data = new HashSet<Long>();
+		HashSet<String> data1 = new HashSet<>();
+		HashSet<String> data2 = new HashSet<>();
 		
+		data1.add("0,0");
+		data1.add("2020,11");
+		data1.add("11,14");
+		data1.add("2000,2000");
 		
+		for(int i = 1; i <= 2020 ; ++i) {
+			data1.forEach(e->{
+				String s[] = e.split(",");
+				Long x = Long.valueOf(s[0]);
+				Long y = Long.valueOf(s[1]);
+				String up = String.valueOf(x+1)+","+String.valueOf(y);
+				String down = String.valueOf(x-1)+","+String.valueOf(y);
+				String left = String.valueOf(x)+","+String.valueOf(y-1);
+				String right = String.valueOf(x)+","+String.valueOf(y+1);
+				if(!data1.contains(up)) {
+					data2.add(up);
+					++sum;
+				}
+				if(!data1.contains(down)) {
+					data2.add(down);
+					++sum;
+				}
+				if(!data1.contains(left)) {
+					data2.add(left);
+					++sum;
+				}
+				if(!data1.contains(right)) {
+					data2.add(right);
+					++sum;
+				}
+				
+			});
+			data1.addAll(data2);
+			data2.clear();
+		}
+		System.out.println(sum);
 		
 	}
 
