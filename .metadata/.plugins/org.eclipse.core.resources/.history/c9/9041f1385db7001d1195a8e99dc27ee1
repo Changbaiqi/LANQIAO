@@ -1,0 +1,30 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+/**
+ * 满足 N! 的末尾恰好有 K 个 0 的最小的 N 是多少? 
+
+如果这样的 N 不存在输出 −1。
+ * @author 20840
+ *
+ */
+public class 题目2674蓝桥杯2022年第十三届省赛真题求阶乘 {
+	
+	
+	
+	public long polo_1(long num) {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//判断有多少个5
+		//然后5的数量/2就是多少个0
+		Scanner sc = new  Scanner(System.in);
+		
+		
+		
+	}
+
+}
