@@ -1,0 +1,13 @@
+package lanqiao;
+
+public class 题目2677蓝桥杯2022年第十三届省赛真题回忆迷宫 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int resMap[][] = new int[301][301];
+		
+		
+		
+	}
+
+}
