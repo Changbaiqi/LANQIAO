@@ -1,0 +1,28 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 回文日期 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String time = sc.nextLine();
+		
+		polo_1(Integer.parseInt(time));
+		
+
+	}
+	
+	//二分
+	public static void polo_1(int time) {
+		int l = time;
+		int r = time+((int)2e8);
+		System.out.println(r);
+	}
+	
+	
+
+}

@@ -1,0 +1,31 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 最大子矩阵 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		
+		int map[][] = new int[N][M];
+		for(int y =0 ; y < map.length ; ++y) {
+			for(int x =0 ;x < map[y].length ; ++x) {
+				map[y][x] = sc.nextInt();
+			}
+		}
+		
+		
+		//计算每行指定区域最小值
+		for() {
+			
+		}
+		
+		
+		
+	}
+
+}

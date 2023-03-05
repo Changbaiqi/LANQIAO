@@ -1,0 +1,30 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 回文日期 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String time = sc.nextLine();
+		
+		polo_1(Integer.parseInt(time));
+		
+
+	}
+	
+	//暴力
+	public static void polo_1(String time) {
+		String year = time.substring(0,4);
+		String month = time.substring(4,6);
+		String day = time.substring(6,8);
+		
+	}
+	
+	
+	
+
+}

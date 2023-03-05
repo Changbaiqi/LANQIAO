@@ -1,0 +1,101 @@
+package lanqiao;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class 回文日期 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String time = sc.nextLine();
+		
+		LocalDate.of(2021, 13, 1);
+		//polo_1(time);
+		
+
+	}
+	
+	//暴力
+	public static void polo_1(String time) {
+		
+		String time_1 = time;
+		while(true) {
+			
+			
+			String year =  time_1.substring(0,4);
+			String month = time_1.substring(4,6);
+			String day = time_1.substring(6,8);
+
+			
+			String year_res = new StringBuffer(year).reverse().toString();
+			
+			int time_res = Integer.parseInt(year.toString()+year_res);
+			
+			int time_num = Integer.parseInt(time_1);
+			if(time_res <= time_num) {
+				time_1 = String.valueOf(Integer.parseInt(time_1)+((int)1e4));
+				continue;
+			}
+			
+			if( ((int)Integer.parseInt(month)) >12 || ((int)Integer.parseInt(month))<1 ){
+				time_1 = String.valueOf(Integer.parseInt(time_1)+((int)1e4));
+				continue;
+			}
+			
+			
+				
+			//str=year+year_res;
+			System.out.println(time_res);
+			break;
+		}
+		
+		
+		
+		time_1 = time;
+		while(true) {
+			String year =  time_1.substring(0,4);
+			//StringBuffer year = new StringBuffer(time.substring(0,4));
+
+			
+			String year_res = new StringBuffer(year).reverse().toString();
+			//String ceshi = year.toString()+year_res;
+			int time_res = Integer.parseInt(year.toString()+year_res);
+			
+			int time_num = Integer.parseInt(time_1);
+			if(time_res <= time_num) {
+				//if()
+				time_1 = String.valueOf(Integer.parseInt(time_1)+((int)1e4));
+				continue;
+			}
+			//str=year+year_res;
+			System.out.println(time_res);
+			break;
+		}	
+	}
+	
+	
+	public static boolean polo_2(String time) {
+		String year =  time.substring(0,4);
+		String month = time.substring(4,6);
+		String day = time.substring(6,8);
+		
+		int year_int = Integer.valueOf(year);
+		
+//		if( (year_int%4 == 0 && year_int%100!=0) || (year_int %400==0) ) {
+//			//System.out.println();
+//			month
+//		}else {
+//			
+//		}
+		LocalDate localDate = LocalDate.of(year_int, Integer.parseInt(month), Integer.parseInt(day));
+		
+
+	}
+	
+	
+	
+
+}

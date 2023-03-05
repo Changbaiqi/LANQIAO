@@ -1,0 +1,43 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 回文日期 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String time = sc.nextLine();
+		
+		polo_1(time);
+		
+
+	}
+	
+	//暴力
+	public static void polo_1(String time) {
+		
+		String str = null;
+		while(true) {
+			StringBuffer year = new StringBuffer(time.substring(0,4));
+			int time_num = Integer.parseInt(time);
+			
+			String year_res = year.reverse().toString();
+			int time_res = Integer.parseInt(year.toString()+year_res);
+			
+			if(time_res < time_num) {
+				time = String.valueOf(Integer.parseInt(time)+((int)1e4));
+				continue;
+			}
+			//str=year+year_res;
+			System.out.println(time_res);
+			break;
+		}
+	}
+	
+	
+	
+
+}

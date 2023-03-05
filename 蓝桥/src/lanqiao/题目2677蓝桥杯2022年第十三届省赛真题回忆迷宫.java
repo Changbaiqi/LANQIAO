@@ -112,13 +112,19 @@ public class 题目2677蓝桥杯2022年第十三届省赛真题回忆迷宫 {
 //			System.out.println(Arrays.toString(map[i]));
 //		}
 		for(int y =0 ;y < map.length ; ++y) {
+			StringBuffer strLin = new StringBuffer();
+			int end = 0;
 			for(int x = 0 ;x < map[y].length ; ++x) {
-				if(map[y][x]==2||map[y][x]==0)
-					System.out.print('*');
+				if(map[y][x]==2||map[y][x]==0) {
+					strLin.append('*');
+					end = x;
+				}
 				else
-					System.out.print(' ');
+					strLin.append(' ');
 			}
-			System.out.println();
+			
+			System.out.println(strLin.toString().substring(0, end+1));
+			
 		}
 		
 		return map;
