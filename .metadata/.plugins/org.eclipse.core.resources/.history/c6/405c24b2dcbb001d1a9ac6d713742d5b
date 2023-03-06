@@ -1,0 +1,27 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class P1177Ä£°å¿ìËÙÅÅĞò {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		
+		Integer data[] = new Integer[a];
+		
+		for(int i = 0 ; i < data.length ; ++i) {
+			data[i] = sc.nextInt();
+		}
+		Arrays.sort(data);
+		Arrays.sort(data,i->{return -1;});
+		for(int i = 0; i < data.length ; ++i) {
+			System.out.print(data[i]+" ");
+		}
+		
+		
+	}
+
+}

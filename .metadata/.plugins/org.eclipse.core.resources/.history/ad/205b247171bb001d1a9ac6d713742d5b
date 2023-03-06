@@ -1,0 +1,97 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class Æß¶ÎÂë {
+	static HashSet<Integer> data = new HashSet<Integer>();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int map[][] = new int[8][8];
+		map[1][2] = 1;
+		map[1][6] = 1;
+		
+		map[2][1] = 1;
+		map[2][3] = 1;
+		map[2][7] = 1;
+		
+		map[3][2] = 1;
+		map[3][4] = 1;
+		map[3][7] = 1;
+		
+		map[4][3] = 1;
+		map[4][5] = 1;
+		
+		map[5][4] = 1;
+		map[5][6] = 1;
+		map[5][7] = 1;
+		
+		map[6][1] = 1;
+		map[6][5] = 1;
+		map[6][7] = 1;
+		
+		map[7][2] = 1;
+		map[7][3] = 1;
+		map[7][6] = 1;
+		map[7][5] = 1;
+		
+		map[0][0] = 1;
+		
+		for(int a=1; a<=7 ; ++a) {
+			for(int b=0; b<=7 ; ++b) {
+				if(map[a][b]!=1)
+					continue;
+				for(int c=0; c<=7 ; ++c) {
+					if(map[b][c]!=1)
+						continue;
+					for(int d=0; d<=7 ; ++d) {
+						if(map[c][d]!=1)
+							continue;
+						for(int e=0; e<=7 ; ++e) {
+							if(map[d][e]!=1)
+								continue;
+							for(int f=0; f<=7 ; ++f) {
+								if(map[e][f]!=1)
+									continue;
+								for(int g=0; g<=7 ; ++g) {
+									if(map[f][g]!=1)
+										continue;
+									int res[] = new int[] {a,b,c,d,e,f,g};
+									if(check(res)) {
+										Arrays.sort(res);
+										data.add(a*1000000+b*100000+c*10000+d*1000+e*100+f*10+g);
+									}
+								}	
+							}	
+						}	
+					}	
+				}	
+			}	
+		}
+		System.out.println(data.size());
+		
+		
+	}
+	
+	
+	public static boolean check(int res[]) {
+//		for(int i = 0 ; i < 7 ; ++i) {
+//			if(res[i]!=0)
+//				break;
+//			if(i==6&& res[i]==0)
+//				return false;
+//		}
+		
+		for(int y =0; y<7 ; ++y) {
+			for(int x =0 ; x < 7 ; ++x) {
+				if(res[y]==res[x] && res[y]!=0)
+					return false;
+			}
+		}
+		
+		
+		return true;
+	}
+
+}
