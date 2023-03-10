@@ -1,0 +1,49 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Í¨µç {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		int x[] = new int[n];
+		int y[] = new int[n];
+		int h[] = new int[n];
+		
+		for(int i = 0 ; i < n ; ++i) {
+			x[i] = sc.nextInt();
+			y[i] = sc.nextInt();
+			h[i] = sc.nextInt();
+		}
+		
+		
+	}
+	
+	
+	
+	public static void prim(int x[],int y[],int h[]) {
+		
+		boolean select[] = new boolean[x.length];
+		int mindist[] = new int[x.length];
+		int parent[] = new int[x.length];
+		
+		select[0] = true;
+		
+		for(int i = 0 ; i < x.length ; ++i) {
+			
+		}
+		
+		
+	}
+	
+	
+	public static int money(int x_1,int y_1,int h_1,int x_2,int y_2,int h_2) {
+		return (int)Math.sqrt(Math.pow(x_1-x_2, 2)+Math.pow(y_1-y_2, 2))+Math.pow(h_1-h_2, 2);
+	}
+
+}
