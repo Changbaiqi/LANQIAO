@@ -1,0 +1,56 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Tokitsukaze_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int T = sc.nextInt();
+		
+		for(int i = 0; i <T ; ++i) {
+			int s= sc.nextInt();
+			char charArray[] = sc.next().toCharArray();
+			polo_1(charArray);
+		}
+		
+	}
+	
+	
+	public static void polo_1(char charArray[]) {
+		
+		//初始化为最大值
+		double min = Double.MIN_VALUE;
+		
+		for(int y = 0 ; y< charArray.length ; ++y) {
+			
+			//统计总值
+			int ans=0;
+			//寄存字母数
+			int lott[] = new int[100];
+			//寄存一个字母的量能有多少组合
+			int lottPolo[] = new int[100];
+			
+			//初始化
+			++lott[charArray[y]];
+			int res = polo_2(lott[charArray[y]])-lottPolo[charArray[y]];
+			lottPolo[lott[charArray[y]]] += res;
+			ans+=res;
+			for(int x = y+1 ; x < charArray.length ; ++x) {
+				++lott[charArray[x]];
+				res = polo_2(lott[charArray[x]])-lottPolo[charArray[x]];
+				lottPolo[lott[charArray[x]]] += res;
+				ans+=res;
+				min = Math.max(min, ans/((x+1)-(y+1)+1));
+			}
+		}
+		System.out.println(min);
+		
+	}
+	
+	public static int polo_2(int n) {
+		return (n*(n-1))/2;
+	}
+
+}
