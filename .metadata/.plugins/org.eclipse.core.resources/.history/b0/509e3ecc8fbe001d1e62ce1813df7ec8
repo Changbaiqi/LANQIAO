@@ -1,0 +1,25 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+//prim算法
+public class P3366模板最小生成树 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		
+		boolean select[] = new boolean[N+1];
+		int minDist[] = new int[M+1];
+		int parent[] = new int[N+1];
+		
+		
+		
+		
+	}
+
+}

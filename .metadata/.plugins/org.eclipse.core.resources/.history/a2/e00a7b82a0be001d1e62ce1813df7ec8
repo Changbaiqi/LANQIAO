@@ -1,0 +1,80 @@
+package lanqiao;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+//prim算法
+public class P3366模板最小生成树 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)));
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+
+		int map[][] = new int[N + 1][N + 1];
+
+		for (int i = 1; i <= M; ++i) {
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+			int len = sc.nextInt();
+
+			map[y][x] = len;
+			map[x][y] = len;
+		}
+
+
+			int ans = prim(map, 1);
+
+
+			System.out.println(ans);
+
+	}
+
+	public static int prim(int map[][], int start) {
+
+		// 用于标记是否选取了
+		boolean select[] = new boolean[map.length];
+		// 用于记录距离
+		int minDist[] = new int[map.length];
+		// 用于记录父节点序号
+		int parent[] = new int[map.length];
+
+		select[start] = true;
+		for (int i = 1; i < select.length; ++i) {
+			int point = 0;
+			int len = Integer.MAX_VALUE;
+			for (int x = 1; x < select.length; ++x) {
+				if (map[start][x] == 0 || select[x])
+					continue;
+
+				if (minDist[x] == 0 || (minDist[x] > map[start][x] && minDist[x] != 0)) {
+					minDist[x] = map[start][x];
+					parent[x] = start;
+					if(minDist[x]<len) {
+						len = map[start][x];
+						point = x;
+				}
+				}
+				
+				
+
+			}
+			start = point;
+			select[point] = true;
+			minDist[point] = len;
+			parent[point] = start;
+		}
+
+		int ans = 0;
+		for (int i = 1; i < map.length; ++i) {
+			ans += minDist[i];
+		}
+		return ans;
+
+	}
+
+}
