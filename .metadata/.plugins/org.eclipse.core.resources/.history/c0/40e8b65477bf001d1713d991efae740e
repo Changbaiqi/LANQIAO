@@ -1,0 +1,27 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 平面切分 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//int N = sc.nextInt();
+		System.out.println(check(3,3,2,2));
+		
+		
+	}
+	
+	
+	//判断是否相交
+	public static boolean check(int Ai,int Bi,int An,int Bn) {
+		int res = (Bn-Bi)/(Ai-An);
+		if( (Ai*res+Bi)!=(An*res+Bn))
+			return false;
+		return true;
+	}
+
+}

@@ -1,0 +1,14 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		Integer data[] = new Integer[12];
+		
+		  Arrays.sort(data,(x,y)->x-y);
+	 }
+
+}

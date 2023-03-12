@@ -1,0 +1,30 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class »ØÎÄ×Ö {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			String str = sc.nextLine();
+			
+			
+			
+		}	
+	}
+	
+	
+	
+	public static int polo_1(String str) {
+		
+		
+	}
+	
+	
+	
+
+}

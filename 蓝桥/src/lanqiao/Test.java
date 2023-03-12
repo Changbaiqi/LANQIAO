@@ -6,53 +6,44 @@ import java.util.Scanner;
 public class Test {
 	
 	public static void main(String[] args) {
-		  Scanner sc=new Scanner(System.in);
-		  int n=sc.nextInt();
-		  int arr[]=new int[n];
-		  for (int i=0;i<n;i++) {
-			  arr[i]=sc.nextInt();
-		  }
-		  Arrays.sort(arr);	  
-		  int sum=0;
-		  
-		  //if(n>2)
-		  int i = 0;
-		  int last = -5;
-		  while(i<n){
-			  if(last!=arr[i]) {
-				  if(sum!=0) {
-					  System.out.println(last+" "+sum);
-					  sum=1;
-					  last=arr[i];
-					  ++i;
-					  continue;
-				  }else {
-					  last=arr[i];
-					  sum=1;
-					  ++i;
-					  continue;
-				  }
-				  
-			  }
-			  
-			  
-			  
-			  ++sum;
-			  
-			  if(i==n-1) {
-				  System.out.println(last+" "+sum);
-			  }
-			  ++i;
-		  }
-//		  for(int i=0;i<n;i++) {
-//			  sum++;
-//			  
-//			 if(arr[i]!=arr[i+1]) {
-//				  System.out.println(arr[i]+" "+sum);
-//				  sum=0;
-//			  }
-//			  //System.out.println(arr[i]);
-//	  }
+		//Integer data[] = new Integer[12];
+		Person p[] = new Person[12];
+		Arrays.sort(p,(x,y)->{
+			return x.getName().length()-y.getName().length();
+		});
+		  //Arrays.sort(data,(x,y)->y-x);
 	 }
 
+}
+
+
+class Person{
+	int age;
+	int sex;
+	String name;
+	public Person(int age, int sex, String name) {
+		super();
+		this.age = age;
+		this.sex = sex;
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getSex() {
+		return sex;
+	}
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 }

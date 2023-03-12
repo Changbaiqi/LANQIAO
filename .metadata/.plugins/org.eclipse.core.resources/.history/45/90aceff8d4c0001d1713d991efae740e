@@ -1,0 +1,21 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		Integer data[] = new Integer[12];
+		
+		  Arrays.sort(data,(x,y)->y-x);
+	 }
+
+}
+
+
+class Person{
+	int age;
+	int sex;
+	String name;
+}

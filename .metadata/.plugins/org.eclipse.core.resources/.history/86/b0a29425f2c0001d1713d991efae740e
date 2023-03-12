@@ -1,0 +1,46 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Í¡²©¶û {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int S = sc.nextInt();
+		int L = sc.nextInt();
+		
+		int tree[] = new int[n];
+		
+		for(int i= 0; i < n ; ++i) {
+			tree[i] = sc.nextInt();
+		}
+		
+		int sz[] = new int[n];
+		for(int i = 0; i < n ; ++i) {
+			sz[i] = sc.nextInt();
+		}
+		
+		
+		
+		
+	}
+	
+	public static void binarySearch(int tree[],int sz[]) {
+		
+		int l =0,r=200000;
+		
+		while(l<r) {
+			if()
+		}
+		
+	}
+	
+	public static boolean check(int month) {
+		
+	}
+
+}
