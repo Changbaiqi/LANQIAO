@@ -1,0 +1,105 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 递增序列 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char data[][] = {
+				"VLPWJVVNNZSWFGHSFRBCOIJTPYNEURPIGKQGPSXUGNELGRVZAG".toCharArray(), 
+				"SDLLOVGRTWEYZKKXNKIRWGZWXWRHKXFASATDWZAPZRNHTNNGQF".toCharArray(), 
+				"ZGUGXVQDQAEAHOQEADMWWXFBXECKAVIGPTKTTQFWSWPKRPSMGA".toCharArray(), 
+				"BDGMGYHAOPPRRHKYZCMFZEDELCALTBSWNTAODXYVHQNDASUFRL".toCharArray(), 
+				"YVYWQZUTEPFSFXLTZBMBQETXGXFUEBHGMJKBPNIHMYOELYZIKH".toCharArray(), 
+				"ZYZHSLTCGNANNXTUJGBYKUOJMGOGRDPKEUGVHNZJZHDUNRERBU".toCharArray(), 
+				"XFPTZKTPVQPJEMBHNTUBSMIYEGXNWQSBZMHMDRZZMJPZQTCWLR".toCharArray(), 
+				"ZNXOKBITTPSHEXWHZXFLWEMPZTBVNKNYSHCIQRIKQHFRAYWOPG".toCharArray(), 
+				"MHJKFYYBQSDPOVJICWWGGCOZSBGLSOXOFDAADZYEOBKDDTMQPA".toCharArray(), 
+				"VIDPIGELBYMEVQLASLQRUKMXSEWGHRSFVXOMHSJWWXHIBCGVIF".toCharArray(), 
+				"GWRFRFLHAMYWYZOIQODBIHHRIIMWJWJGYPFAHZZWJKRGOISUJC".toCharArray(), 
+				"EKQKKPNEYCBWOQHTYFHHQZRLFNDOVXTWASSQWXKBIVTKTUIASK".toCharArray(), 
+				"PEKNJFIVBKOZUEPPHIWLUBFUDWPIDRJKAZVJKPBRHCRMGNMFWW".toCharArray(), 
+				"CGZAXHXPDELTACGUWBXWNNZNDQYYCIQRJCULIEBQBLLMJEUSZP".toCharArray(), 
+				"RWHHQMBIJWTQPUFNAESPZHAQARNIDUCRYQAZMNVRVZUJOZUDGS".toCharArray(), 
+				"PFGAYBDEECHUXFUZIKAXYDFWJNSAOPJYWUIEJSCORRBVQHCHMR".toCharArray(), 
+				"JNVIPVEMQSHCCAXMWEFSYIGFPIXNIDXOTXTNBCHSHUZGKXFECL".toCharArray(), 
+				"YZBAIIOTWLREPZISBGJLQDALKZUKEQMKLDIPXJEPENEIPWFDLP".toCharArray(), 
+				"HBQKWJFLSEXVILKYPNSWUZLDCRTAYUUPEITQJEITZRQMMAQNLN".toCharArray(), 
+				"DQDJGOWMBFKAIGWEAJOISPFPLULIWVVALLIIHBGEZLGRHRCKGF".toCharArray(), 
+				"LXYPCVPNUKSWCCGXEYTEBAWRLWDWNHHNNNWQNIIBUCGUJYMRYW".toCharArray(), 
+				"CZDKISKUSBPFHVGSAVJBDMNPSDKFRXVVPLVAQUGVUJEXSZFGFQ".toCharArray(), 
+				"IYIJGISUANRAXTGQLAVFMQTICKQAHLEBGHAVOVVPEXIMLFWIYI".toCharArray(), 
+				"ZIIFSOPCMAWCBPKWZBUQPQLGSNIBFADUUJJHPAIUVVNWNWKDZB".toCharArray(), 
+				"HGTEEIISFGIUEUOWXVTPJDVACYQYFQUCXOXOSSMXLZDQESHXKP".toCharArray(), 
+				"FEBZHJAGIFGXSMRDKGONGELOALLSYDVILRWAPXXBPOOSWZNEAS".toCharArray(), 
+				"VJGMAOFLGYIFLJTEKDNIWHJAABCASFMAKIENSYIZZSLRSUIPCJ".toCharArray(), 
+				"BMQGMPDRCPGWKTPLOTAINXZAAJWCPUJHPOUYWNWHZAKCDMZDSR".toCharArray(), 
+				"RRARTVHZYYCEDXJQNQAINQVDJCZCZLCQWQQIKUYMYMOVMNCBVY".toCharArray(), 
+				"ABTCRRUXVGYLZILFLOFYVWFFBZNFWDZOADRDCLIRFKBFBHMAXX".toCharArray()
+		};
+		
+		polo(data);
+		
+	}
+	
+	
+	public static void polo(char data[][]) {
+		long sum=0;
+		
+		for(int y = 0 ; y < data.length ; ++y) {
+			for(int x=0 ;x < 50 ; ++x) {
+				
+				//向右
+				for(int r=x ; r< 50 ; ++r) {
+					if(data[y][x]<data[y][r])
+						++sum;
+				}
+				
+				//向左
+//				for(int l=x-1 ; l>=0 ; --l) {
+//					if(data[y][x]<data[y][l])
+//						++sum;
+//				}
+				//向下
+				for(int d = y; d<data.length ; ++d) {
+					if(data[y][x]<data[d][x])
+						++sum;
+				}
+				
+				//向上
+//				for(int d = y-1; d>=0 ; --d) {
+//					if(data[y][x]<data[d][x])
+//						++sum;
+//				}
+				//向右上
+				for(int r=x,t=y ; (r<50&&t>=0) ; r+=1,t-=1) {
+					if(data[y][x]<data[t][r])
+						++sum;
+				}
+				//向左上
+//				for(int l=x-1,t=y-1 ; (l>=0&&t>=0) ; --l,--t) {
+//					if(data[y][x]<data[t][l])
+//						++sum;
+//				}
+				//向右下
+				for(int r=x,t=y ; (r<50&&t<data.length) ; r+=1,t+=1) {
+					if(data[y][x]<data[t][r])
+						++sum;
+				}
+				//向左下
+//				for(int l=x-1,t=y+1 ; (l>=0&&t<data.length) ; --l,++t) {
+//					if(data[y][x]<data[t][l])
+//						++sum;
+//				}
+				
+				
+				
+			}
+		}
+		System.out.println(sum);
+	}
+	
+	
+
+}

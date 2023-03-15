@@ -1,0 +1,33 @@
+package lanqiao;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class ∑¢œ÷ª∑ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int xy[][] = new int[100000][100000];
+		
+		HashSet<Integer> data = new HashSet<>();
+		for(int i = 0 ;i< N ; ++i) {
+			int x = sc.nextInt();
+			int y = sc.nextInt();
+			data.add(x);
+			data.add(y);
+			xy[y][x] = 1;
+			xy[x][y] = 1;
+			
+		}
+		
+	}
+	
+	
+	public static boolean find(int xy[][]) {
+		return false;
+	}
+
+}
