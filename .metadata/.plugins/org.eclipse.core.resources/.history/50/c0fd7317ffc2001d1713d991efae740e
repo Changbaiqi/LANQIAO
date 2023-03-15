@@ -1,0 +1,12 @@
+package lanqiao;
+
+public class ≈≈–Ú {
+
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+		System.out.println((int)'l');
+		System.out.println((int)'a');
+		System.out.println((int)'n');
+	}
+
+}
