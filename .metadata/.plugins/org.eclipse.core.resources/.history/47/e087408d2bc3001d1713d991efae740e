@@ -1,0 +1,35 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 签到题签到题 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//测试数据条数
+		int T = sc.nextInt();
+		
+		for(int i = 0 ; i < T ; ++i) {
+			//店的数量
+			int n = sc.nextInt();
+			//达到多少钱减免
+			int a = sc.nextInt();
+			//减免金额
+			int b = sc.nextInt();
+			
+			for(int x = 0 ; x < n ; ++x) {
+				//多少菜品
+				int k = sc.nextInt();
+			}
+			
+			
+		}
+		
+		
+		
+	}
+
+}

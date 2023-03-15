@@ -1,0 +1,54 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class  ‘ ‘ø¥Ã∞–ƒ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+		
+		Co data[] = new Co[n];
+		
+		for(int i = 0 ; i < data.length ; ++i) {
+			data[i] = new Co();
+			data[i].setNight(sc.nextInt());
+		}
+		
+		for(int i = 0 ; i < data.length ; ++i) {
+			data[i].setNight(sc.nextInt());
+		}
+		
+		
+	}
+	
+
+}
+
+class Co{
+	int light;
+	int night;
+	boolean choose=false;
+	public int getLight() {
+		return light;
+	}
+	public void setLight(int light) {
+		this.light = light;
+	}
+	public int getNight() {
+		return night;
+	}
+	public void setNight(int night) {
+		this.night = night;
+	}
+	public boolean isChoose() {
+		return choose;
+	}
+	public void setChoose(boolean choose) {
+		this.choose = choose;
+	}
+	
+	
+}

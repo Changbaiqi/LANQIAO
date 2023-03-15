@@ -61,7 +61,7 @@ public class 递增序列 {
 				for(int d = y+1; d<data.length ; ++d) {
 					if(data[y][x]<data[d][x])
 						++sum;
-				}
+				} 
 				
 
 				//向右上

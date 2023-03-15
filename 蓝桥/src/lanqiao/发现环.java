@@ -30,34 +30,30 @@ public class 发现环 {
 		//多少个点
 		Integer data[] = dataSet.toArray(new Integer[0]);
 		//标记是否选了
-
+		
 		for(int i= 0 ; i< data.length ; ++i) {
-			boolean sel[] = new boolean[sides.length];
+			
+			boolean sidesSel[] = new boolean[sides.length];
 			
 			Queue<Integer> que = new LinkedList<>();
-			que.add(data[i]);
-			boolean sw = false;
+			que.offer(data[i]);
+			
+			int x=0;
 			while(!que.isEmpty()) {
-				
-				int res = que.poll();
-				
-				if(res==data[i] && sw) {
+				int point = que.poll();
+				if(x!=0 && point==data[i]) {
 					System.out.println(data[i]);
-					break;
-				}
-				sw=true;
-					
-				for(int x= 0 ;x < sides.length; ++x) {
-					
-					if (sides[x].getY()==res && !sel[x] ) {
-						sel[x] = true;
-						que.offer(sides[x].getX());
-					}else if (sides[x].getX()==res && !sel[x] ) {
-						sel[x] = true;
-						que.offer(sides[x].getY());
-					} 
 				}
 				
+				for(int y = 0 ;y< data.length ; ++y) {
+					int ss = Side.check(sides, point, data[y]);
+					if(ss!=-1 && !sidesSel[ss] ) {
+						que.offer(data[y]);
+						sidesSel[ss]=true;
+					}
+				}
+				
+				++x;
 			}
 			
 			
@@ -95,6 +91,15 @@ class Side{
 	}
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	public static int check(Side sides[],int x,int y) {
+		for(int i= 0; i< sides.length ; ++i) {
+			if(sides[i].getX() == x || sides[i].getY() == x)
+				if(sides[i].getX() == y || sides[i].getY() == y)
+					return i;
+		}
+		return -1;
 	}
 	
 }
