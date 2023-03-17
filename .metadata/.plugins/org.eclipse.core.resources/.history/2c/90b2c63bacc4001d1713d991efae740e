@@ -1,0 +1,26 @@
+package lanqiao;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class ∑¢œ÷ª∑_2 {
+	public static void main(String[] args) {
+		
+		HashSet<Integer> point = new HashSet<Integer>();
+		
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int N= sc.nextInt();
+		
+		for(int i= 0; i< N ; ++i) {
+			
+		}
+		
+		
+		
+		
+		
+	}
+}

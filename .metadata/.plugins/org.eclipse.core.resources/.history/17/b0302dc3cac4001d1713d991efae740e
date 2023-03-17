@@ -1,0 +1,26 @@
+ackage lanqiao;
+
+import java.util.Scanner;
+
+public class ³É¼¨·ÖÎö {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int data[] = new int[n];
+		
+		int min =101,max=0;
+		for(int i =0; i < data.length ; ++i) {
+			data[i] = sc.nextInt();
+			min = Math.min(min, data[i]);
+			max = Math.max(max, data[i]);
+		}
+		
+		
+		
+		
+	}
+
+}
