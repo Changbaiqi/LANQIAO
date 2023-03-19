@@ -1,0 +1,50 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ½×³Ë {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		
+		for(int i =0 ; i < T; ++i) {
+			int p = sc.nextInt();
+			
+			int l  =1,r=(int)1e9,mid;
+			while(l<=r){
+				mid = (l+r)/2;
+				if(check(p,mid))
+					r=mid-1;
+				else
+					l = mid+1;
+			}
+			System.out.println(l);
+		}
+		
+		
+		
+	}
+	
+	public static void solve(int p,int mid) {
+		ArrayList<Integer> data = new ArrayList<Integer>;
+	}
+	
+	public static boolean check(int p,int mid) {
+		
+		long ans=1;
+		for(int i = 1; i<mid; ++i ) {
+			ans*=i;
+			if(ans>=mid)
+				return true;
+		}
+		return false;
+	}
+	
+	
+
+}

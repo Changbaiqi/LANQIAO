@@ -1,0 +1,18 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class P1387最大正方形 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		int map[][] =  new int[m][n];
+		
+		
+	}
+
+}
