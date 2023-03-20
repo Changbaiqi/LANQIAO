@@ -1,0 +1,20 @@
+package lanqiao;
+
+import java.util.Stack;
+
+public class µºÓìÊıÁ¿ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		
+	}
+	
+	public static int numIslands(char[][] grid) {
+		
+		Stack<Integer[][]> stack= new Stack<Integer[][]>;
+		
+	}
+}

@@ -1,0 +1,18 @@
+package lanqiao;
+
+public class ×ÖÄ¸Êý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 
+		int i =2022;
+		
+		while(true) {
+			
+			
+			++i;
+		}
+		
+	}
+
+}

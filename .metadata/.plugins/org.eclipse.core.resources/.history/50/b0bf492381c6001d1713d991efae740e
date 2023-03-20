@@ -1,0 +1,20 @@
+package lanqiao;
+
+import java.math.BigInteger;
+
+public class ×ÖÄ¸Êý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 
+		int i =2022;
+		
+		while(true) {
+			String turn = BigInteger.valueOf(i).toString(16);
+			
+			++i;
+		}
+		
+	}
+
+}

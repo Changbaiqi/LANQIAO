@@ -1,0 +1,19 @@
+package lanqiao;
+
+import java.util.Arrays;
+
+public class ÌâÄ¿ÃèÊö {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int map[] = new int[10];
+		Arrays.fill(map, 2021);
+		
+		int i = 1;
+		while(true) {
+			
+		}
+		
+	}
+
+}

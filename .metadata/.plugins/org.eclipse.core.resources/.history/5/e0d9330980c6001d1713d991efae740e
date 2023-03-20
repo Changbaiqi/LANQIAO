@@ -1,0 +1,23 @@
+package lanqiao;
+
+import java.util.Arrays;
+
+public class 题目描述 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int map[] = new int[10];
+		Arrays.fill(map, 2021);
+		
+		int i = 1;
+		while(true) {
+			int res = i;
+			while(res!=0) {
+				题目描述
+			}
+			
+		}
+		
+	}
+
+}
