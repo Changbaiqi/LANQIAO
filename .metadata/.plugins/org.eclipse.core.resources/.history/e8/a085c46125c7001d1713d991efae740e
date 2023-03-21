@@ -1,0 +1,70 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class »¬ÐÐ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n  = sc.nextInt();
+		int m = sc.nextInt();
+		
+		int map[][] = new int[n][m];
+		Co co[] = new Co[n*m];
+		
+		for(int y =0 ,c=0; y < n ; ++y) {
+			for(int x = 0; x < m; ++x,++c) {
+				map[y][x] = sc.nextInt();
+				co[c] = new Co(map[y][x],y,x);
+			}
+		}
+		Arrays.sort(co,(y,x)-> x.getData()-y.getData());
+		
+		for(int i= 0; i< co.length ; ++i) {
+			
+		}
+		
+	}
+	
+	public static int check(int map[][],int x,int y) {
+		Queue<int[]> qu = new LinkedList<int[]>();
+	}
+
+}
+
+class Co{
+	int data;
+	int y;
+	int x;
+	public Co(int data, int y, int x) {
+		super();
+		this.data = data;
+		this.y = y;
+		this.x = x;
+	}
+	public int getData() {
+		return data;
+	}
+	public void setData(int data) {
+		this.data = data;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int y) {
+		this.y = y;
+	}
+	public int getX() {
+		return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	
+	
+}

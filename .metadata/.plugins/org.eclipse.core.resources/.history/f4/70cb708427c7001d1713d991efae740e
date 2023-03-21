@@ -1,0 +1,33 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class »¬ÐÐ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n  = sc.nextInt();
+		int m = sc.nextInt();
+		
+		int map[][] = new int[n][m];
+		Co co[] = new Co[n*m];
+		
+		for(int y =0 ,c=0; y < n ; ++y) {
+			for(int x = 0; x < m; ++x,++c) {
+				map[y][x] = sc.nextInt();
+				co[c] = new Co(map[y][x],y,x);
+			}
+		}
+		Arrays.sort(co,(y,x)-> x.getData()-y.getData());
+		
+		for(int i= 0; i< co.length ; ++i) {
+			
+		}
+		
+
+}
