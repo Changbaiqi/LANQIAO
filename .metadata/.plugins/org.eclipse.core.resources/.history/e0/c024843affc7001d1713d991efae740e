@@ -1,0 +1,16 @@
+package lanqiao;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class ÁÐÃû {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println(BigInteger.valueOf(3).toString(27));
+		
+		
+	}
+
+}

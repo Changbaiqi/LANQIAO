@@ -1,0 +1,66 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 附近最小 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int n = sc.nextInt();
+		
+		int map[] = new int[n];
+		
+		int data[] = new int[n];
+		for(int i = 0 ; i < n ; ++i) {
+			map[i]  = sc.nextInt();
+		}
+		
+		
+		int k = sc.nextInt();
+		
+		Queue<Integer> qu = new LinkedList<Integer>();
+		
+		int min = Integer.MAX_VALUE,index=0;
+		/*for(int i= 0 ; i < n ; ++i) {
+			int l = Math.max(0, i-k);
+			int r = Math.min(n-1, i+k);
+			
+			
+			while(qu.isEmpty() && i<=r) qu.offer(i);
+			
+			
+		}*/
+		
+		for(int i= 0; i< n ; ++i) {
+			
+			//首次入队
+			if(qu.isEmpty()) qu.offer(i);
+			
+			
+			int front = qu.peek();
+			
+			if(map[front]>map[i] || (front <i-n && front >i+n-1))
+				qu.poll();
+				
+		}
+		
+		for(int i=0 ; i < n+k-1 ; ++i) {
+			if(qu.isEmpty()) 
+				qu.offer(i);
+			
+			
+			
+		}
+		
+		
+		
+		
+	}
+
+}
