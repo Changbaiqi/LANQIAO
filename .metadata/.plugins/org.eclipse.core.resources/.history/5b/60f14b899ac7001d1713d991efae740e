@@ -5,11 +5,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-/**
- * https://www.lanqiao.cn/problems/2414/learning/?page=1&first_category_id=1&sort=students_count&second_category_id=3&tags=2023
- * @author 长白崎
- *
- */
 public class 滑行 {
 
 	public static void main(String[] args) {
@@ -30,9 +25,9 @@ public class 滑行 {
 		}
 		Arrays.sort(co,(y,x)-> x.getData()-y.getData());
 		
-//		for(int i= 0 ; i < co.length ; ++i) {
-//			System.out.println(co[i].getData()+" ");
-//		}
+		for(int i= 0 ; i < co.length ; ++i) {
+			System.out.println(co[i].getData()+" ");
+		}
 
 		int cc= check(map,co);
 		System.out.println(cc);
@@ -76,12 +71,12 @@ public class 滑行 {
 			
 		}
 		
-//		for(int y= 0; y< dp.length ; ++y) {
-//			for(int x = 0; x < dp[y].length ; ++x) {
-//				System.out.print(dp[y][x]+" ");
-//			}
-//			System.out.println();
-//		}
+		for(int y= 0; y< dp.length ; ++y) {
+			for(int x = 0; x < dp[y].length ; ++x) {
+				System.out.print(dp[y][x]+" ");
+			}
+			System.out.println();
+		}
 		
 		return max;
 	}

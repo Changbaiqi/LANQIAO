@@ -5,11 +5,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-/**
- * https://www.lanqiao.cn/problems/2414/learning/?page=1&first_category_id=1&sort=students_count&second_category_id=3&tags=2023
- * @author ³¤°×Æé
- *
- */
 public class »¬ÐÐ {
 
 	public static void main(String[] args) {
