@@ -1,0 +1,42 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 通电_kruskal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		int x[] = new int[n+1];
+		int y[] = new int[n+1];
+		int h[] = new int[n+1];
+		
+		for(int i = 1 ; i <= n ; ++i) {
+			x[i] = sc.nextInt();
+			y[i] = sc.nextInt();
+			h[i] = sc.nextInt();
+		}
+		
+		
+	}
+	
+	
+	public static float kruskal(Integer x[],Integer y[],Integer h[]) {
+		
+	}
+
+}
+
+class Side{
+	int point1;//下标
+	int point2;//下标
+	
+	double moeny;
+	
+	
+}

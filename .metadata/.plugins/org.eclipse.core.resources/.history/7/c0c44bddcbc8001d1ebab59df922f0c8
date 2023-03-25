@@ -1,0 +1,80 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 递归递归递归 {
+	
+	static int sum=0;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		
+		for(int i= 0 ; i < T ; ++i) {
+			int M = sc.nextInt();
+			int N = sc.nextInt();
+			boolean map[][] = new boolean[M][N];
+			
+			int K = sc.nextInt();
+			
+		}
+		
+	}
+	
+	
+	public static void dfs(boolean map [][],boolean state[][],int x,int y,int ans,int win) {
+		
+		//过滤超边界
+		if(x<0 || x<0 || x>=map[0].length || y>map.length)
+			return;
+			
+		if
+		
+		//穷举下一步
+		int next[][]= {
+				{x,y-1},
+				{x,y+1},
+				{x-1,y},
+				{x+1,y}
+		};
+		
+		
+		//标记是否为不可以坐人
+		boolean sw = false;
+		
+		for(int i = 0 ; i < next.length ; ++i) {
+			//过滤超边界
+			if(next[i][0]<0 || next[i][1]<0 || next[i][0]>=map[0].length || next[i][1]>map.length)
+				continue;
+			if(map[next[i][1]][next[i][0]])
+				sw = true;
+		}
+		
+		//判断是否到达指定座位数量
+		if(ans==win) {
+			++sum;
+			return;
+		}
+		
+		
+		
+		
+		//走写一步
+		for(int i = 0 ; i < next.length ; ++i) {
+			
+			
+			
+			
+			
+			
+			//走下一步
+			dfs(map,state,next[i][0],next[i][1],ans+1,win);
+			break;	
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Í¨µç_kruskal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		int x[] = new int[n+1];
+		int y[] = new int[n+1];
+		int h[] = new int[n+1];
+		
+		for(int i = 1 ; i <= n ; ++i) {
+			int xx = sc.nextInt();
+			int yy = sc.nextInt();
+			
+			x[i] = Math.min(xx, yy);
+			y[i] = Math.max(xx, yy);
+			h[i] = sc.nextInt();
+		}
+		
+		
+	}
+	
+	
+	public static float kruskal(Integer x[],Integer y[],Integer h[]) {
+		
+		Arrays.sort(h,(xx,yy)->{
+			return 1;
+		});
+	}
+
+}

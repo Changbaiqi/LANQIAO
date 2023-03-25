@@ -26,7 +26,6 @@ public class 附近最小 {
 		int k = sc.nextInt();
 		
 		Deque<Integer> qu = new LinkedList<Integer>();
-
 		
 		for(int i= 0; i< n ; ++i) {
 			
@@ -40,6 +39,7 @@ public class 附近最小 {
 			while(k<Math.abs(i-qu.peekFirst()))
 				qu.pollFirst();
 			
+			//if( 2*k)
 				
 				
 		}

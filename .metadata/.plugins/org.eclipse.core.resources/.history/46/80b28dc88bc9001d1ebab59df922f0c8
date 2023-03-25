@@ -1,0 +1,109 @@
+package lanqiao;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BFSBFSBFS {
+
+	static int kmin = Integer.MAX_VALUE;
+	static int emin = Integer.MAX_VALUE;
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		InputStream inputStream = System.in;
+		int T = sc.nextInt();
+		for (int i = 0; i < T; ++i) {
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+
+			char map[][] = new char[n][m];
+			int px=0,py=0,kx=0,ky=0,ex=0,ey=0;
+			for (int y = 0; y < n; ++y) {
+					map[y] = sc.next().toCharArray();
+					
+					for(int t= 0 ; t < map[y].length ; ++t) {
+						if(map[y][t]=='P') {
+							px = t;py=y;
+						}
+						if(map[y][t]=='E') {
+							ex = t;ey=y;
+						}
+						if(map[y][t]=='K') {
+							kx = t;ky=y;
+						}
+				}
+			}
+			kmin = Integer.MAX_VALUE;
+			emin = Integer.MAX_VALUE;
+			
+			boolean state[][] = new boolean[n][m];
+			state[py][px] = true;
+			state[ey][ex] = true;
+			//搜寻人到钥匙
+			dfs(map,state,px,py,kx,ky,0,1);
+			//搜寻钥匙到出口
+			state = new boolean[n][m];
+			state[ky][kx]= true;
+			dfs(map,state,kx,ky,ex,ey,0,2);
+			if(kmin==Integer.MAX_VALUE || emin == Integer.MAX_VALUE)
+				System.out.println("No solution");
+			else
+				System.out.println(kmin+emin);
+		}
+
+	}
+	
+	
+	public static void bfs(char map[][], boolean state[][], int x, int y,int ex, int ey, int step,int model) {
+		if (x == ex && y == ey) {
+			if(model==1)
+				kmin = Math.min(kmin, step);
+			else
+				emin = Math.min(emin, step);
+			return;
+		}
+		int next[][] = { { x, y - 1 }, { x, y + 1 }, { x - 1, y }, { x + 1, y } };
+		
+		Queue<int[][]> qu = new LinkedList<int[][]>();
+		while() {
+			
+		}
+	}
+
+	public static void dfs(char map[][], boolean state[][], int x, int y,int ex, int ey, int step,int model) {
+
+		if (x == ex && y == ey) {
+			if(model==1)
+				kmin = Math.min(kmin, step);
+			else
+				emin = Math.min(emin, step);
+			return;
+		}
+
+
+		int next[][] = { { x, y - 1 }, { x, y + 1 }, { x - 1, y }, { x + 1, y } };
+
+		for (int i = 0; i < next.length; ++i) {
+
+			// 过滤
+			if (next[i][0] < 0 || next[i][1] < 0 || next[i][0] >= map[0].length || next[i][1] >= map.length)
+				continue;
+
+			if (map[next[i][1]][next[i][0]] == '#')
+				continue;
+
+			if (state[next[i][1]][next[i][0]])
+				continue;
+			
+			state[next[i][1]][next[i][0]] = true;
+			dfs(map, state, next[i][0], next[i][1],ex, ey, step + 1,model);
+			state[next[i][1]][next[i][0]] = false;
+		}
+
+	}
+
+}

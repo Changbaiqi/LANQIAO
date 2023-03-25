@@ -1,0 +1,111 @@
+package lanqiao;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+public class BFSBFSBFS {
+
+	static FastScanner cin = new FastScanner(System.in);//快读
+	static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));//快速输出
+	
+	
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		// Scanner sc = new Scanner(System.in);
+		// InputStream inputStream = System.in;
+		
+		
+		int T = cin.nextInt();
+		for (int i = 0; i < T; ++i) {
+			
+			int n = cin.nextInt();
+			int m = cin.nextInt();
+
+			char map[][] = new char[n][m];
+			int px = 0, py = 0, ex = 0, ey = 0;
+			
+			//寄存钥匙
+			ArrayList<int[]> kdata= new ArrayList<>();
+			for (int y = 0; y < n; ++y) {
+
+				String res = cin.next();
+				map[y] = res.toCharArray();
+
+				for (int t = 0; t < map[y].length; ++t) {
+					if (map[y][t] == 'P') {
+						px = t;
+						py = y;
+					}
+					if (map[y][t] == 'E') {
+						ex = t;
+						ey = y;
+					}
+					if (map[y][t] == 'K') {
+						kdata.add(new int[] {t,y,Integer.MAX_VALUE,0});
+					}
+				}
+			}
+			
+			// 搜寻钥匙到出口
+			boolean state[][] = new boolean[n][m];
+			int minKey = bfs(map, state, ex, ey, kdata, 0,2);
+			if (minKey==Integer.MAX_VALUE)
+				System.out.println("No solution");
+			else
+				System.out.println(minKey);
+		}
+
+	}
+	
+	
+	public static int bfs(char map[][],boolean state[][],int px,int py) {
+		
+	}
+
+	
+	
+	static class FastScanner{//用于快速读入大量数据
+		BufferedReader br;
+		StringTokenizer st;
+		public FastScanner(InputStream in) {
+			br = new BufferedReader(new InputStreamReader(in),16384);
+			eat("");
+		}
+		public void eat(String s) {
+			st = new StringTokenizer(s);
+		}
+		public String nextLine() {
+			try {
+				return br.readLine();
+			} catch (IOException e) {
+				return null;
+			}
+		}
+		public boolean hasNext() {
+			while(!st.hasMoreTokens()) {
+				String s = nextLine();
+				if(s==null) return false;
+				eat(s);
+			}
+			return true;
+		}
+		public String next() {
+			hasNext();
+			return st.nextToken();
+		}
+		public int nextInt() {
+			return Integer.parseInt(next());
+		}
+	}
+
+
+}

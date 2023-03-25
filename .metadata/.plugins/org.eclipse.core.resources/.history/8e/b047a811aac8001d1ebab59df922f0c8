@@ -1,0 +1,15 @@
+package lanqiao;
+
+/**
+ * https://ac.nowcoder.com/acm/contest/53808/A
+ * @author 20840
+ *
+ */
+public class 简单的签到题 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

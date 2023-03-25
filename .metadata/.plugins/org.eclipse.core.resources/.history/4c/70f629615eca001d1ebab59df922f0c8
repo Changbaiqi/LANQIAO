@@ -1,0 +1,75 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 通电_kruskal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		int x[] = new int[n+1];
+		int y[] = new int[n+1];
+		int h[] = new int[n+1];
+		
+		for(int i = 1 ; i <= n ; ++i) {
+			x[i] = sc.nextInt();
+			y[i] = sc.nextInt();
+			h[i] = sc.nextInt();
+		}
+		
+		
+	}
+	
+	
+	public static float kruskal(Integer x[],Integer y[],Integer h[]) {
+		
+	}
+
+}
+
+class Side11{
+	int point1;//下标
+	int point2;//下标
+	
+	double moeny;
+
+	public Side(int point1, int point2, double moeny) {
+		super();
+		this.point1 = point1;
+		this.point2 = point2;
+		this.moeny = moeny;
+	}
+
+	public int getPoint1() {
+		return point1;
+	}
+
+	public void setPoint1(int point1) {
+		this.point1 = point1;
+	}
+
+	public int getPoint2() {
+		return point2;
+	}
+
+	public void setPoint2(int point2) {
+		this.point2 = point2;
+	}
+
+	public double getMoeny() {
+		return moeny;
+	}
+
+	public void setMoeny(double moeny) {
+		this.moeny = moeny;
+	}
+	
+	
+	
+	
+}

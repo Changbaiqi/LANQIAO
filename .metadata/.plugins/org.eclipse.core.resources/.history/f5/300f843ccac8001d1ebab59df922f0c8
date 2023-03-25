@@ -1,0 +1,31 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class µÝ¹éµÝ¹éµÝ¹é {
+	
+	static int sum=0;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		
+		for(int i= 0 ; i < T ; ++i) {
+			int M = sc.nextInt();
+			int N = sc.nextInt();
+			boolean map[][] = new boolean[M][N];
+			
+			int K = sc.nextInt();
+			
+		}
+		
+	}
+	
+	
+	public static void dfs() {
+		
+	}
+
+}

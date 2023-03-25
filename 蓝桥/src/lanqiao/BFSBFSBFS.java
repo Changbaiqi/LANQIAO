@@ -1,0 +1,166 @@
+package lanqiao;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+import javax.management.Query;
+
+public class BFSBFSBFS {
+
+	static FastScanner cin = new FastScanner(System.in);// 快读
+	static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));// 快速输出
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		// Scanner sc = new Scanner(System.in);
+		// InputStream inputStream = System.in;
+
+		int T = cin.nextInt();
+		for (int i = 0; i < T; ++i) {
+
+			int n = cin.nextInt();
+			int m = cin.nextInt();
+
+			char map[][] = new char[n][m];
+			int px = 0, py = 0, ex = 0, ey = 0;
+
+			// 寄存钥匙
+			ArrayList<int[]> kdata = new ArrayList<>();
+			for (int y = 0; y < n; ++y) {
+
+				String res = cin.next();
+				map[y] = res.toCharArray();
+
+				for (int t = 0; t < map[y].length; ++t) {
+					if (map[y][t] == 'P') {
+						px = t;
+						py = y;
+					}
+					if (map[y][t] == 'E') {
+						ex = t;
+						ey = y;
+					}
+					if (map[y][t] == 'K') {
+						kdata.add(new int[] { t, y, Integer.MAX_VALUE, 0 });
+					}
+				}
+			}
+
+			// 搜寻钥匙到出口
+			int minKey = bfs(map, px, py);
+			if (minKey == -1)
+				System.out.println("No solution");
+			else
+				System.out.println(minKey);
+		}
+
+	}
+
+	public static int bfs(char map[][], int px, int py) {
+		
+		Queue<int[]> qu = new LinkedList<int[]>();
+
+		int state[][] = new int[map.length][map[0].length];
+		
+		++state[py][px];
+		qu.offer(new int[] {px,py,0/*是否找到钥匙*/,0/*步数*/});
+		
+		while(!qu.isEmpty()) {
+			
+			int point[] = qu.poll();
+			//检验是否是钥匙
+			if(map[point[1]][point[0]]=='K') {
+				point[2] = 1;
+			}
+			if(point[2]==1 && map[point[1]][point[0]]=='E') {
+				return point[3];
+			}
+			
+			
+			//例举可能走的格子
+			int next[][]={
+					{point[0],point[1]-1},
+					{point[0],point[1]+1},
+					{point[0]-1,point[1]},
+					{point[0]+1,point[1]}
+			};
+			
+			for(int i = 0; i< next.length ; ++i) {
+				//过滤越界
+				if(next[i][0]<0||next[i][1]<0|| next[i][1]>=map.length || next[i][0]>=map[0].length)
+					continue;
+				//过滤墙
+				if(map[next[i][1]][next[i][0]]=='#')
+					continue;
+				
+				//拿到钥匙
+				if(point[2]==1) {
+					if(state[next[i][1]][next[i][0]]<=1) {
+						++state[next[i][1]][next[i][0]];
+						qu.offer(new int[] {next[i][0],next[i][1],point[2],point[3]+1});
+					}
+				}
+				//未拿到钥匙
+				if(point[2]==0) {
+					if(state[next[i][1]][next[i][0]]==0 && map[next[i][1]][next[i][0]]!='E') {
+						++state[next[i][1]][next[i][0]];
+						qu.offer(new int[] {next[i][0],next[i][1],point[2],point[3]+1});
+					}
+				}
+			}
+		}
+		return -1;
+	}
+
+	static class FastScanner {// 用于快速读入大量数据
+		BufferedReader br;
+		StringTokenizer st;
+
+		public FastScanner(InputStream in) {
+			br = new BufferedReader(new InputStreamReader(in), 16384);
+			eat("");
+		}
+
+		public void eat(String s) {
+			st = new StringTokenizer(s);
+		}
+
+		public String nextLine() {
+			try {
+				return br.readLine();
+			} catch (IOException e) {
+				return null;
+			}
+		}
+
+		public boolean hasNext() {
+			while (!st.hasMoreTokens()) {
+				String s = nextLine();
+				if (s == null)
+					return false;
+				eat(s);
+			}
+			return true;
+		}
+
+		public String next() {
+			hasNext();
+			return st.nextToken();
+		}
+
+		public int nextInt() {
+			return Integer.parseInt(next());
+		}
+	}
+
+}

@@ -1,0 +1,26 @@
+package lanqiao;
+
+import java.io.InputStream;
+import java.util.Scanner;
+
+public class BFSBFSBFS {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		InputStream inputStream = System.in;
+		int T = sc.nextInt();
+		
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		char map[][] = new char[n][m];
+		
+		for(int y = 0 ; y< n;++y) {
+			for(int x = 0 ; x < m ; ++x) {
+			map[y][x] = System.in.read() ;
+			}
+		}
+	}
+
+}

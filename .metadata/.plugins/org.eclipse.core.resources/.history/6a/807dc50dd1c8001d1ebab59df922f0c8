@@ -1,0 +1,108 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 递归递归递归 {
+
+	static int sum = 0;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+
+		int T = sc.nextInt();
+
+		for (int i = 0; i < T; ++i) {
+			int M = sc.nextInt();
+			int N = sc.nextInt();
+
+			int K = sc.nextInt();
+
+			sum = 0;
+			int ans = 0;
+			boolean map[][] = new boolean[M][N];
+			boolean state[][] = new boolean[M][N];
+			map[0][0] = false;
+			state[0][0] = true;
+			dfs(map, state, 0, 0, 0, K);
+			ans += sum;
+
+			sum = 0;
+			map = new boolean[M][N];
+			state = new boolean[M][N];
+			map[0][0] = true;
+			state[0][0] = true;
+			dfs(map, state, 0, 0, 1, K);
+			ans += sum;
+			System.out.println(ans);
+		}
+
+	}
+
+	public static void dfs(boolean map[][], boolean state[][], int x, int y, int ans, int win) {
+
+		// 判断是否到达指定座位数量
+		if (ans == win) {
+			++sum;
+			return;
+		}
+
+		// 穷举下一步
+		int next[][] = { { x, y - 1 }, { x, y + 1 }, { x + 1, y } };
+
+		// 标记是否为不可以坐人
+		boolean sw = false;
+
+		for (int i = 0; i < next.length; ++i) {
+			// 过滤超边界
+			if (next[i][0] < 0 || next[i][1] < 0 || next[i][0] >= map[0].length || next[i][1] >= map.length)
+				continue;
+			if (map[next[i][1]][next[i][0]]) {
+				sw = true;
+				break;
+			}
+		}
+
+		// 走下一步
+		if (sw) {
+			map[y][x] = false;
+			// 走写一步
+			for (int i = 0; i < next.length; ++i) {
+
+				// 过滤超边界
+				if (next[i][0] < 0 || next[i][1] < 0 || next[i][0] >= map[0].length || next[i][1] >= map.length)
+					continue;
+
+				if (state[next[i][1]][next[i][0]])
+					continue;
+
+				state[next[i][1]][next[i][0]] = true;
+				// 走下一步
+//				if (sw) {
+//					map[next[i][1]][next[i][0]] = false;
+//					dfs(map, state, next[i][0], next[i][1], ans + 1, win);
+//				} else {
+//					map[next[i][1]][next[i][0]] = true;
+//					dfs(map, state, next[i][0], next[i][1], ans + 1, win);
+//					map[next[i][1]][next[i][0]] = false;
+//				}
+				dfs(map, state, next[i][0], next[i][1], ans + 1, win);
+
+				state[next[i][1]][next[i][0]] = false;
+
+				break;
+
+			}
+			
+		} else {
+			map[y][x] = true;
+			
+			map[y][x] = false;
+		}
+
+
+
+	}
+
+}

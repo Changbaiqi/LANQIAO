@@ -1,0 +1,68 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class µÝ¹éµÝ¹éµÝ¹é {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int T = sc.nextInt();
+		
+		for(int i= 0 ; i < T ; ++i) {
+			int M = sc.nextInt();
+			int N = sc.nextInt();
+			boolean map[][] = new boolean[M][N];
+			
+			int K = sc.nextInt();
+			boolean state[][] = new boolean[M][N];
+			int sum = dfs(map,state,0,0,K,0);
+		}
+		
+	}
+	
+	
+	public static int dfs(boolean map[][],boolean state[][],int x,int y,int ans,int now) {
+		if(ans==now) {
+			return 1;
+		}
+		
+		int sum =0;
+		
+		
+		int next[][]= {
+				{x,y+1},
+				{x+1,y},
+				{x,y-1}
+		};
+		
+		boolean sw =false;
+		for(int  t=0 ; t< next.length ; ++t) {
+			if(next[t][0]<0 || next[t][1]<0 || next[t][0]>=map[0].length || next[t][1]>=map.length)
+				continue;
+			if(map[next[t][1]][next[t][0]]) {
+				sw = true;
+			}
+		}
+		
+		for(int i =0 ; i< next.length ; ++i) {
+			if(next[i][0]<0 || next[i][1]<0 || next[i][0]>=map[0].length || next[i][1]>=map.length)
+				continue;
+			if(sw) {
+				map[next[i][1]][next[i][0]]= false;
+				sum+=dfs(map,state,next[i][0],next[i][1],ans,now);
+			}else {
+				map[next[i][1]][next[i][0]]= false;
+				sum+=dfs(map,state,next[i][0],next[i][1],ans,now);
+				map[next[i][1]][next[i][0]]= true;
+				sum+=dfs(map,state,next[i][0],next[i][0],ans,now+1);
+				map[next[i][1]][next[i][0]]= false;
+			}
+			break;
+		}
+		return sum;
+	}
+
+}

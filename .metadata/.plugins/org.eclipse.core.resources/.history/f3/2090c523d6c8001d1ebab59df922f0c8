@@ -1,0 +1,96 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 递归递归递归 {
+
+	static int sum = 0;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+
+		int T = sc.nextInt();
+
+		for (int i = 0; i < T; ++i) {
+			int M = sc.nextInt();
+			int N = sc.nextInt();
+
+			int K = sc.nextInt();
+
+
+			boolean map[][] = new boolean[M][N];
+			boolean state[][] = new boolean[M][N];
+			dfs(map, state, 0, 0, 0, K);
+			System.out.println(sum);
+		}
+
+	}
+
+	public static void dfs(boolean map[][], boolean state[][], int x, int y, int ans, int win) {
+
+		
+		// 穷举下一步
+		int next[][] = { { x, y - 1 }, { x, y + 1 }, { x + 1, y } };
+		
+		//判断是否不能坐人
+		boolean sw = false;
+		for(int i = 0 ; i < next.length ; ++i) {
+			if(next[i][0]<0 || next[i][1]<0 || next[i][0]>=map[0].length  || next[i][1]>=map.length)
+				continue;
+			if(map[next[i][1]][next[i][0]]) {
+				sw = true;
+				break;
+			}
+		}
+		
+		
+		if(sw){
+			//不能坐人
+			for(int i = 0 ; i < next.length ; ++i) {
+				if(next[i][0]<0 || next[i][1]<0 || next[i][0]>=map[0].length  || next[i][1]>=map.length)
+					continue;
+				if(state[next[i][1]][next[i][0]])
+					continue;
+				state[next[i][1]][next[i][0]] = true;
+				dfs(map,state,next[i][0],next[i][1],ans,win);
+				state[next[i][1]][next[i][0]] = false;
+				break;
+			}
+		}else {
+			//能坐人
+			
+			//坐人
+			if(ans+1==win) {
+				++sum;
+				return;
+			}
+				
+			for(int i = 0 ; i < next.length ; ++i) {
+				if(next[i][0]<0 || next[i][1]<0 || next[i][0]>=map[0].length  || next[i][1]>=map.length)
+					continue;
+				if(state[next[i][1]][next[i][0]])
+					continue;
+				state[next[i][1]][next[i][0]] = true;
+				dfs(map,state,next[i][0],next[i][1],ans+1,win);
+				state[next[i][1]][next[i][0]] = false;
+				break;
+			}
+			//不坐人
+			for(int i = 0 ; i < next.length ; ++i) {
+				if(next[i][0]<0 || next[i][1]<0 || next[i][0]>=map[0].length  || next[i][1]>=map.length)
+					continue;
+				if(state[next[i][1]][next[i][0]])
+					continue;
+				state[next[i][1]][next[i][0]] = true;
+				dfs(map,state,next[i][0],next[i][1],ans,win);
+				state[next[i][1]][next[i][0]] = false;
+				break;
+			}
+		}
+
+
+	}
+
+}

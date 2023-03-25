@@ -1,0 +1,26 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+/**
+ * https://ac.nowcoder.com/acm/contest/53808/A
+ * @author 长白崎
+ *
+ */
+public class 简单的签到题 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		
+	}
+	
+	
+	public static dfs() {
+		
+	}
+
+}
