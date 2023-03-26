@@ -1,0 +1,120 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BFS_ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNextInt()) {
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+			int k = sc.nextInt();
+			int s = sc.nextInt();
+			
+			int kk[] = new int[k];
+			for(int i=0 ; i < k; ++i) {
+				kk[i] = sc.nextInt();
+			}
+			
+			
+			//存的图
+			HashMap<Integer, Pointt> mm = new HashMap<>();
+			//int mm[][] = new int[m][2];
+			for(int i= 0 ; i < m ; ++i) {
+				
+				int a1 = sc.nextInt();
+				int a2 = sc.nextInt();
+				if(mm.containsKey(a1)) {
+					mm.get(a1).getNext().add(a2);
+				}else {
+					ArrayList<Integer> nn = new ArrayList<Integer>();
+					nn.add(a2);
+					mm.put(a1, new Pointt(a1, nn));
+				}
+				
+				if(mm.containsKey(a2)) {
+					mm.get(a2).getNext().add(a1);
+				}else {
+					ArrayList<Integer> nn = new ArrayList<Integer>();
+					nn.add(a1);
+					mm.put(a2, new Pointt(a2, nn));
+				}
+				
+			}
+			bfs(s,kk,mm);
+			
+			
+		}
+		
+	}
+	
+	
+	public static void bfs(int s,int kk[],HashMap<Integer, Pointt> mm) {
+		//最大时间长度
+		int maxT = kk.length;
+		
+		Queue<Integer[]> data = new LinkedList<Integer[]>();
+		data.offer(new Integer[] {s/*第几个石头*/,0/*时间*/,0/*蝌蚪*/});
+		
+		while(!data.isEmpty()) {
+			Integer point[] = data.poll();
+			
+			if(point[0]==kk[point[2]]) {
+				System.out.println(point[1]);
+				return;
+			}
+			
+			ArrayList<Integer> next = mm.get(point[0]).getNext();
+			
+			for(int i= 0 ; i < next.size() ; ++i) {
+				int cc = point[1]==0? point[2]:((point[2]+1)<maxT?(point[2]+1):point[2]);
+				data.offer(new Integer[] {next.get(i),point[1]+1,cc});
+			}
+			
+		}
+		
+	}
+
+}
+
+class Pointt{
+	int point;
+	ArrayList<Integer> next;
+	public Pointt(int point, ArrayList<Integer> next) {
+		super();
+		this.point = point;
+		this.next = next;
+	}
+	public int getPoint() {
+		return point;
+	}
+	public void setPoint(int point) {
+		this.point = point;
+	}
+	public ArrayList<Integer> getNext() {
+		return next;
+	}
+	public void setNext(ArrayList<Integer> next) {
+		this.next = next;
+	}
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return point;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Pointt p = (Pointt)obj;
+		return (this.point == p.getPoint());
+	}
+	
+	
+}

@@ -1,0 +1,47 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+/**
+ * https://www.luogu.com.cn/problem/P1706
+ * @author 长白崎
+ *
+ */
+public class P1706全排列问题 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		int data[] = new int[num];
+		int state[] = new int[num];
+		int printArra[] = new int[num];
+		
+		for(int i=0 ; i < num; ++i) {
+			data[i] = sc.nextInt();
+		}
+		fullPer(data,state,printArra,0);
+	}
+	
+	public static void fullPer(int data[],int state[],int printArra[],int step) {
+		if(step==state.length) {
+			for(int i= 0 ; i < printArra.length ; ++i) {
+				System.out.print(printArra[i]+" ");
+			}
+			System.out.println();
+			return;
+		}
+		
+		for(int i= 0 ; i <data.length ; ++i) {
+			if(state[i]==1)
+				continue;
+			
+			state[i] = 1;
+			printArra[step] = data[i];
+			fullPer(data,state,printArra,step+1);
+			state[i] =0;
+		}
+	}
+
+}

@@ -1,0 +1,42 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+import javax.management.Query;
+
+public class DFS_ {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int data[] = new int[n];
+		
+		for(int i= 0 ; i <n ; ++i) {
+			data[i]= sc.nextInt();
+		}
+		
+		
+	}
+	
+	
+	public static void dd(int data[],ArrayList<Integer> map) {
+		Queue<Integer> qu = new LinkedList<Integer>();
+		
+		int ans=0;
+		while(!qu.isEmpty()) {
+			int a1 = qu.poll();
+			int a2 = qu.poll();
+			
+			if(a1==0) {
+				if(data[a1]>data[a2]) {
+					
+				}
+			}
+		}
+	}
+
+}

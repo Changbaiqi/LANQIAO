@@ -1,0 +1,15 @@
+package lanqiao;
+
+/**
+ * https://www.luogu.com.cn/problem/P1706
+ * @author 长白崎
+ *
+ */
+public class P1706全排列问题 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

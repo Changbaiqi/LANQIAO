@@ -1,0 +1,48 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class BFS_ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			int n = sc.nextInt();
+			int m = sc.nextInt();
+			int k = sc.nextInt();
+			int s = sc.nextInt();
+			
+			int kk[] = new int[k];
+			for(int i=0 ; i < k; ++i) {
+				kk[i] = sc.nextInt();
+			}
+			
+			int mm[] = new int[m];
+			for(int i= 0 ; i < m ; ++i) {
+				mm[i] = sc.nextInt();
+			}
+			
+			
+		}
+		
+	}
+	
+	
+	public static int bfs(int s,int kk[],int mm[]) {
+		//最大时间长度
+		int maxT = kk.length;
+		
+		Queue<int[]> data = new LinkedList<int[]>();
+		data.offer(new int[] {s/*第几个石头*/,0/*时间*/});
+		
+		while() {
+			
+		}
+		
+	}
+
+}
