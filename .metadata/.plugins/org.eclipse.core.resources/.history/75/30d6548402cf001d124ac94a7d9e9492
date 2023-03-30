@@ -1,0 +1,57 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ¿∂«≈±≠2022≥ı»¸ªÿ“‰√‘π¨ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		String move = sc.next();
+		solve(move);
+	}
+	
+	
+	public static void solve(String move) {
+		int map[][] = new int[210][210];
+		
+		int x=105,y=105;
+		int minX=210,minY =210;
+		int maxX =0,maxY = 0;
+		
+		map[y][x] = 1;
+		for(int i = 0; i < move.length() ; ++i ) {
+			if(move.charAt(i)=='U')
+				--y;
+			if(move.charAt(i)=='D')
+				++y;
+			if(move.charAt(i)=='L')
+				--x;
+			if(move.charAt(i)=='R')
+				++y;
+			minX = Math.min(minX, x);
+			minY = Math.min(minY, y);
+			maxX = Math.max(maxX, x);
+			maxY = Math.max(maxY, y);
+			
+			map[y][x] = 1;
+		}
+		
+		int resMap[][] = new int[maxY-minY][maxX-minX];
+		prMap(resMap);
+		
+		System.out.println(minX+" "+maxX);
+	}
+	
+	public static void prMap(int map[][]) {
+		for(int y =0 ; y < map.length ; ++y) {
+			for(int x= 0 ; x < map[y].length ; ++x) {
+				System.out.print(map[y][x]+" ");
+			}
+			System.out.println();
+		}
+	}
+
+}
