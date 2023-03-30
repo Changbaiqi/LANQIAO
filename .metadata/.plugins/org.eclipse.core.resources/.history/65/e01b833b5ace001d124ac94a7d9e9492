@@ -1,0 +1,21 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class À¶ÇÅ±­2022³õÈüÉ½ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		for(int i= 20; i <= 20223; ++i) {
+			StringBuffer ss = new StringBuffer(String.valueOf(i));
+			
+			String s1 = ss.toString();
+			String s2  = ss.reverse().toString();
+			String con = s1+s2;
+			int num = Integer.valueOf(con);
+			if(>=2022 &&)
+			//int a1 = 2022332202;
+		}
+	}
+
+}

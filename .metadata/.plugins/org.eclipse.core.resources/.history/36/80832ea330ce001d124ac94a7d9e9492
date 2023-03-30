@@ -1,0 +1,29 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class È«Çò±äÅ¯ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		
+		int map[][] = new int[N][N];
+		int state[][] = new int[N][N];
+		for(int y =0 ; y < N ; ++y) {
+			for(int x = 0; x < N ; ++x) {
+				
+			}
+		}
+		
+		
+	}
+	
+	public void bfs(int map[][],int state[][]) {
+		
+		
+	}
+
+}

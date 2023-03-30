@@ -1,0 +1,62 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class P1002NOIP2002普及组过河卒 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+
+		int by = sc.nextInt();
+		int bx = sc.nextInt();
+
+		int map[][] = new int[by + 1][bx + 1];
+
+		int my = sc.nextInt();
+		int mx = sc.nextInt();
+
+		// 标记障碍
+		int next[][] = { { mx, my }, { mx - 1, my - 2 }, { mx - 2, my - 1 }, { mx + 1, my - 2 }, { mx + 2, my - 1 },
+				{ mx - 2, my + 1 }, { mx - 1, my + 2 }, { mx + 1, my + 2 }, { mx + 2, my + 1 },
+
+		};
+		for (int i = 0; i < next.length; ++i) {
+			if (next[i][0] < 0 || next[i][1] < 0 || next[i][1] >= map.length || next[i][0] >= map[0].length)
+				continue;
+			map[next[i][1]][next[i][0]] = 1;
+		}
+
+		int dp[][] = new int[by + 1][bx + 1];
+		dp[0][0] = 1;
+		for (int y = 0; y <= by; ++y) {
+			for (int x = 0; x <= bx; ++x) {
+				
+				int a1 = 0;
+				int a2 = 0;
+				
+				if (y == 0 && x == 0)
+					continue;
+
+				if(map[y][x]==1)
+					continue;
+				
+				if (y - 1 >= 0 && x >= 0 && y - 1 <= my && x <= mx)
+					a1 = dp[y - 1][x];
+				if (y >= 0 && x - 1 >= 0 && y <= my && x - 1 <= mx)
+					a2 = dp[y][x - 1];
+
+				dp[y][x] = a1 + a2;
+			}
+		}
+
+		System.out.println(dp[my][mx]);
+
+	}
+	
+	public static void pr() {
+		
+	}
+
+}

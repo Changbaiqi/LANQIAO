@@ -27,7 +27,7 @@ public class P1706全排列问题 {
 	public static void fullPer(int data[],int state[],int printArra[],int step) {
 		if(step==state.length) {
 			for(int i= 0 ; i < printArra.length ; ++i) {
-				System.out.print(printArra[i]+" ");
+				System.out.print("	"+printArra[i]);
 			}
 			System.out.println();
 			return;

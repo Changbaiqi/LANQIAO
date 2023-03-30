@@ -55,33 +55,38 @@ N
  *
  */
 public class 数组切分 {
-	
+
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		
-		Scanner sc = new Scanner(System.in);
-		int num =sc.nextInt();
-		int data[] = new int[num];
+		Scanner sc =  new Scanner(System.in);
 		
-		for(int i = 0; i < data.length ; ++i) {
-			data[i] = sc.nextInt();
-		}
+		int N = sc.nextInt();
 		
-		int dp[] = new int[num];
+		int data[] = new int[N+1];
+		
+		int dp[] = new int[N+1];
 		dp[0] = 1;
-		for(int x=1 ;x< data.length ; ++x) {
-			int min=data[x],max=data[x];
-			dp[x]=dp[x-1];
-			for(int y = x-1 ; y >=0 ; --y) {
-				min= data[y]<min?data[y]:min;
-				max = data[y]>max?data[y]:max;
-				//dp[0] = data[x];
-				if(max-min == x-y)
-					dp[x]=(dp[x]+1)%1000000007;
-			}
+		for(int i =1 ; i < data.length ; ++i) {
+			data[i] = sc.nextInt();
+			check(data,dp,i);
 		}
 
-		System.out.println(dp[num-1]);
+		System.out.println(dp[N]%(((int)1e9)+7));
+	}
+	
+	public static void check(int data[],int dp[],int index) {
 		
+		
+		int min=data[index],max = data[index];
+		for(int i =index ; i > 0 ; --i){
+			min = Math.min(min, data[i]);
+			max = Math.max(max, data[i]);
+			if((index-i)==max-min) {
+				dp[index]+=dp[i-1];
+				dp[index]%=(((int)1e9)+7);
+			}
+		}
 	}
 	
 	

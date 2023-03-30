@@ -1,0 +1,20 @@
+package lanqiao;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class À¶ÇÅ±­2022³õÈüĞÇÆÚ¼ÆËã {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		
+		BigInteger num = new BigInteger("20");
+		num = num.pow(22);
+		num = num.mod(BigInteger.valueOf(7));
+		
+		
+	}
+
+}

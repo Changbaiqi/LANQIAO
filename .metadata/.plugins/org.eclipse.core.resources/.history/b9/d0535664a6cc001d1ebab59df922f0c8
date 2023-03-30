@@ -1,0 +1,24 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class P1002NOIP2002普及组过河卒 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int bx = sc.nextInt();
+		int by = sc.nextInt();
+		
+		int map[][] = new int[][];
+		
+		int mx = sc.nextInt();
+		int my = sc.nextInt();
+		
+		
+		
+	}
+
+}

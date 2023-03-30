@@ -1,0 +1,51 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class È«Çò±äÅ¯ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		
+		int map[][] = new int[N][N];
+		int state[][] = new int[N][N];
+		for(int y =0 ; y < N ; ++y) {
+			for(int x = 0; x < N ; ++x) {
+				
+			}
+		}
+		
+		
+	}
+	
+	public void bfs(int map[][],int state[][],int startX,int startY) {
+		
+		Queue<int[]> data = new LinkedList<int[]>();
+		data.add(new int[] {startX,startY});
+		boolean sw = false;
+		while(!data.isEmpty()) {
+			int point[] = data.poll();
+			
+			int next[][] = {
+					{point[0],point[1]-1},
+					{point[0],point[1]+1},
+					{point[0]-1,point[1]},
+					{point[0]+1,point[1]},
+			};
+			
+			for(int i= 0; i < next.length ; ++i) {
+				if(next[i][0]<0 || next[i][1] < 0 || next[i][1] >= map.length || next[i][0] >= map[0].length)
+					contineu;
+			}
+			
+		}
+		
+		
+	}
+
+}
