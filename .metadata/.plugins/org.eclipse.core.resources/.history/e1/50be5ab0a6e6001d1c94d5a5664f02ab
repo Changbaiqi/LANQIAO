@@ -1,0 +1,47 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+/**
+ * https://vjudge.net/problem/HDU-1166
+ * 
+ * @author 20840
+ *
+ */
+public class 树状数组 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+
+		// 多少条测试条例
+		int t = sc.nextInt();
+
+		for (int i = 0; i < t; ++i) {
+			int N = sc.nextInt();
+
+			int data[] = new int[N + 1];
+			int tree[] = new int[N+1];
+			
+			for (int x = 1; x < data.length; ++x) {
+				data[x] = sc.nextInt();
+				updata(x, data[x], data, tree);
+			}
+		}
+		
+		
+	}
+
+	public static int lowbit(int x) {
+		return x & (-x);
+	}
+
+	public static void updata(int i, int k, int data[], int tree[]) {
+		while (i < data.length) {
+			data[i] += k;
+			i += lowbit(i);
+		}
+	}
+
+}

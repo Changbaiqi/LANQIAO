@@ -1,0 +1,28 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ÊýÊý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 
+		for(int i= 2333333 ; i <= 23333333; ++i) {
+			
+		}
+	}
+	
+	
+	
+	public static boolean check(int num) {
+		
+		int ans =0;
+		for(int i =2 ; i < Math.sqrt(num) ; ++i) {
+			
+		}
+	}
+	
+	
+	
+
+}

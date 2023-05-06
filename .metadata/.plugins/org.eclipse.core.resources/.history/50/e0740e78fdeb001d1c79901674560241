@@ -1,0 +1,38 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class รินฌ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+	}
+	
+	public static void dfs(int map[][],int startX,int startY) {
+		if(startX==map[0].length-1 && startY == map.length-1) {
+			return;
+		}
+		
+		
+		int next[][]= {
+				{startX,startY-1},
+				{startX,startY+1},
+				{startX-1,startY},
+				{startX+1,startY},
+		};
+		
+		
+		for(int i= 0; i < next.length ; ++i) {
+			if(next[i][0]<0 && next[i][1]<0 && next[i][1]>map.length-1 && next[i][0]>map[0].length)
+				continue;
+		}
+		
+	}
+
+}

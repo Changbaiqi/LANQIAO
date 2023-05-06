@@ -1,0 +1,49 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 迷宫 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+	}
+	
+	public static void bfs(int map[][]) {
+		Queue<int[]> qu = new LinkedList<int[]>();
+		
+		qu.add(new int[] {1,1,0});
+		
+		while(!qu.isEmpty()) {
+			int cc[] = qu.peek();
+			
+			int next[][]= {
+					{cc[0],cc[1]-1},
+					{cc[0],cc[1]+1},
+					{cc[0]-1,cc[1]},
+					{cc[0]+1,cc[1]},
+			};
+			
+			
+			for(int i= 0 ; i < next.length ; ++i) {
+				
+				
+				//过滤
+				if(next[i][0]<1 && next[i][1] < 1 && next[i][1] > map.length && next[i][0] >map.length)
+					continue;
+				//如果传送门
+				if()
+				
+			}
+			
+			
+		}
+		
+	}
+
+}

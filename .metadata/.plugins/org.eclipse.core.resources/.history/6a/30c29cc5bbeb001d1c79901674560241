@@ -1,0 +1,40 @@
+package lanqiao;
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class ◊Û“∆”““∆ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int M =sc.nextInt();
+		
+		Queue<Integer> Ldata = new LinkedList<Integer>();
+		Queue<Integer> Rdata = new LinkedList<Integer>();
+		
+		
+		
+		for(int i= 0; i <M ; ++i) {
+			String c = sc.next();
+			int n = sc.nextInt();
+			int res = data.get(n);
+			res
+		}
+		
+	}
+	
+	public static int lowBit(int i) {
+		return i&(-i);
+	}
+	public static void build(int tdata[],int tree[]) {
+		
+		while() {
+			
+		}
+	}
+
+}

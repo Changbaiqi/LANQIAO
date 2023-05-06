@@ -1,0 +1,48 @@
+package lanqiao;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class 好等差数列 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		//数列长度
+		int n = sc.nextInt();
+		
+		//存储数据的数组
+		int data[] = new int[n];
+		for(int i= 0 ; i < n ; ++i) {
+			data[i] =sc.nextInt();
+		}
+		System.out.println(slove(data));
+		int c = sc.nextInt();
+		
+		for(int i= 0; i <c ; ++i) {
+			int a = sc.nextInt();
+			int v = sc.nextInt();
+			//暂时寄存
+			int res = data[a];
+			
+			data[a] = v;
+			
+			System.out.println(slove(data));
+			//data[a] = res;
+		}
+		
+		
+		
+	}
+	
+	public static int slove(int nums[]) {
+		HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
+		
+		for(int i =1 ; i < nums.length ; ++i) {
+			int a = nums[i]-nums[i-1];
+		}
+	}
+
+}

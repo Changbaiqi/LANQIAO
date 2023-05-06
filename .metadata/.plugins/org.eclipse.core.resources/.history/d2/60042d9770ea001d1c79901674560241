@@ -1,0 +1,19 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 好等差数列 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		//数列长度
+		int n = sc.nextInt();
+		
+		int data = new int[n+1];
+		
+	}
+
+}

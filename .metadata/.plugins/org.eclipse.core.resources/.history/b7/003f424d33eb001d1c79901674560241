@@ -1,0 +1,58 @@
+package lanqiao;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class 好等差数列 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		//数列长度
+		int n = sc.nextInt();
+		
+		//存储数据的数组
+		int data[] = new int[n];
+		for(int i= 0 ; i < n ; ++i) {
+			data[i] =sc.nextInt();
+		}
+		System.out.println(slove(data));
+		int c = sc.nextInt();
+		
+		for(int i= 0; i <c ; ++i) {
+			int a = sc.nextInt();
+			int v = sc.nextInt();
+			//暂时寄存
+			int res = data[a];
+			
+			data[a] = v;
+			
+			System.out.println(slove(data));
+			//data[a] = res;
+		}
+		
+		
+		
+	}
+	
+	public static int slove(int nums[]) {
+		int n = nums.length;
+	    int minOps = n; // 最坏情况下需要操作 n 次
+	    for (int d = -n + 1; d < n; d++) { // 遍历所有可能的公差
+	        int cnt = 0; // 记录需要修改的元素个数
+	        int last = nums[0]; // 计算等差数列时的前一个元素
+	        for (int i = 1; i < n; i++) {
+	            int expect = last + d; // 期望的下一个元素
+	            if (nums[i] != expect) {
+	                cnt++;
+	            }
+	            last = expect; // 记录上一个元素
+	        }
+	        minOps = Math.min(minOps, cnt); // 更新最小操作数
+	    }
+	    return minOps;
+	}
+
+}

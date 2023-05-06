@@ -1,0 +1,49 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ÊıÊı {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int ans =0;
+		for(int i= 2333333 ; i <= 23333333; ++i) {
+			if(check2(i))
+				++ans;
+		}
+		System.out.println(ans);
+	}
+	
+	
+	
+	public static boolean check(int num) {
+		
+		int ans =0;
+		for(int i =2 ; i <= Math.sqrt(num) ; ++i) {
+			while(num%i==0) {
+				num/=i;
+				++ans;
+			}
+		}
+		if(num>1) ++ans;
+		return ans == 12;
+	}
+	
+	public static boolean check2(int num) {
+		int ans =0;
+		for(int i =2 ; i <=num ; ++i) {
+			if(num%i ==0) {
+				while(num %i ==0) {
+					num/=i;
+					++ans;
+				}
+			}
+		}
+		
+		return ans ==12;
+	}
+	
+	
+	
+
+}

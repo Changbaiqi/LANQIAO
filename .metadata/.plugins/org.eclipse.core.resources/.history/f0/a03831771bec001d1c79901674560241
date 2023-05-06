@@ -1,0 +1,100 @@
+package lanqiao;
+
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 迷宫 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		
+		HashMap<String,HashSet<String>> cs = new HashMap<String, HashSet<String>>();
+		for(int i = 0 ; i < m;  ++i) {
+			int x1 = sc.nextInt();
+			int y1 = sc.nextInt();
+			int x2 = sc.nextInt();
+			int y2 = sc.nextInt();
+			String a1 = x1+"-"+y1;
+			if(cs.containsKey(a1)) {
+				cs.get(a1).add(x2+"-"+y2);
+			}else {
+				HashSet<String> a2 = new HashSet();
+				a2.add(x2+"-"+y2);
+				cs.put(a1, a2);
+			}
+		}
+		//地图
+		int map[][] = new int[n+1][n+1];
+		
+		long ans = 0;
+		for(int y = 1 ; y < map.length  ; ++y) {
+			for(int x = 1; x < map[y].length ; ++x) {
+				int state[][] = new int[n+1][n+1];
+				 ans+=bfs(map,state,cs,x,y);
+			}
+		}
+		System.out.printf("%.2f",(float)ans/(n*n));
+		
+	}
+	
+	public static int bfs(int map[][],int state[][],HashMap<String,HashSet<String>> cs,int startX,int startY) {
+		Queue<int[]> qu = new LinkedList<int[]>();
+		
+		qu.add(new int[] {startX,startY,0});
+		
+		while(!qu.isEmpty()) {
+			int cc[] = qu.poll();
+			
+			int next[][]= {
+					{cc[0],cc[1]-1},
+					{cc[0],cc[1]+1},
+					{cc[0]-1,cc[1]},
+					{cc[0]+1,cc[1]},
+			};
+			
+			if(cc[0]==map.length-1 && cc[1]==map.length-1) {
+				return cc[2];
+			}
+			
+			
+			//如果传送门
+			if( cs.containsKey(cc[0]+"-"+cc[1])) {
+				for(String xy: cs.get(cc[0]+"-"+cc[1])) {
+					int cx = Integer.parseInt(xy.split("-")[0]);
+					int cy= Integer.parseInt(xy.split("-")[1]);
+					state[cy][cx] = 1;
+					qu.offer(new int[] {cx,cy,cc[2]+1});
+				}
+			}
+			
+			//普通走法
+			for(int i= 0 ; i < next.length ; ++i) {
+				
+				
+				//过滤
+				if(next[i][0]<1 || next[i][1] < 1 || next[i][1] > map.length-1 || next[i][0] >map.length-1)
+					continue;
+				//过滤走过
+				if(state[next[i][1]][next[i][0]]==1)
+					continue;
+				
+				
+				state[next[i][1]][next[i][0]] = 1;
+				qu.offer(new int[] {next[i][0],next[i][1],cc[2]+1});
+				
+			}
+			
+			
+		}
+		return 0;
+	}
+
+}

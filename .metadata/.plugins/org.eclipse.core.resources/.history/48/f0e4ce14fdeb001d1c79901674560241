@@ -1,0 +1,32 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class รินฌ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+	}
+	
+	public static void dfs(int map[][],int startX,int startY) {
+		if() {
+			
+		}
+		
+		
+		int next[][]= {
+				{},
+				{},
+				{},
+				{}
+		};
+		
+	}
+
+}

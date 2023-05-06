@@ -1,0 +1,28 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class รินฌ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+	}
+	
+	public static void bfs(int map[][]) {
+		Queue<int[]> qu = new LinkedList<int[]>();
+		
+		qu.add(new int[] {1,1});
+		
+		while(!qu.isEmpty()) {
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,88 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 迷宫 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		
+		ArrayList<In>
+		for(int i = 0 ; i < m;  ++i) {
+			int x1 = sc.nextInt();
+			int y1 = sc.nextInt();
+			int x2 = sc.nextInt();
+			int y2 = sc.nextInt();
+			cs.put(x1+"-"+y1, x2+"-"+y2);
+			//cs.put(x2+"-"+y2, x1+"-"+y1);
+		}
+		//地图
+		int map[][] = new int[n+1][n+1];
+		int state[][] = new int[n+1][n+1];
+		
+		long ans = 0;
+		for(int y = 1 ; y < map.length  ; ++y) {
+			for(int x = 1; x < map[y].length ; ++x) {
+				 ans+=bfs(map,state);
+			}
+		}
+		
+	}
+	
+	public static int bfs(int map[][],int state[][],HashMap<String, String> cs) {
+		Queue<int[]> qu = new LinkedList<int[]>();
+		
+		qu.add(new int[] {1,1,0});
+		
+		while(!qu.isEmpty()) {
+			int cc[] = qu.peek();
+			
+			int next[][]= {
+					{cc[0],cc[1]-1},
+					{cc[0],cc[1]+1},
+					{cc[0]-1,cc[1]},
+					{cc[0]+1,cc[1]},
+			};
+			
+			
+			for(int i= 0 ; i < next.length ; ++i) {
+				
+				
+				//过滤
+				if(next[i][0]<1 && next[i][1] < 1 && next[i][1] > map.length-1 && next[i][0] >map.length-1)
+					continue;
+				//过滤走过
+				if(state[next[i][1]][next[i][0]]==1)
+					continue;
+				
+				//如果传送门
+				if( cs.containsKey(next[i][0]+"-"+next[i][1])) {
+					
+					
+					qu.offer(new int[] {next[i][0],next[i][1],cc[2]+1});
+					int cx = Integer.parseInt(cs.get(next[i][0]+"-"+next[i][1]).split("-")[0]);
+					int cy = Integer.parseInt(cs.get(next[i][0]+"-"+next[i][1]).split("-")[1]);
+					
+				}
+				
+			}
+			
+			
+		}
+		
+	}
+
+}
+
+class Pointtt{
+	int x;
+	int y;
+}
