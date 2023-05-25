@@ -1,0 +1,23 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ½è½ÌÊÒ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int n =sc.nextInt(); //ÌìÊı
+		int m = sc.nextInt();
+		int day[] = new int[n+1];
+		
+		for(int i =1 ; i <=n ; ++i) {
+			day[i] = sc.nextInt();
+ 		}
+		
+		
+	}
+
+}

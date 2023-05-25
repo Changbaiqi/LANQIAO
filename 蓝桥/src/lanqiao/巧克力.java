@@ -24,6 +24,7 @@ public class 巧克力 {
 			data[i] = new C(a,b,c);
 		}
 		
+		//对单价进行从小到大的排序
 		Arrays.sort(data,1,n,(a,b)->{
 			return (int)(a.getA()-b.getA());
 		});

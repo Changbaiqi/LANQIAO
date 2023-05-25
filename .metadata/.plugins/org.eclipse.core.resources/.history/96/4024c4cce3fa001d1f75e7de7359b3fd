@@ -1,0 +1,27 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 借教室 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int n =sc.nextInt(); //天数
+		int m = sc.nextInt(); //订单数量
+		int day[] = new int[n+1]; //用于存储每天剩余的教室
+		
+		for(int i =1 ; i <=n ; ++i) {
+			day[i] = sc.nextInt();
+ 		}
+		
+		int d[] = new int[m+1];
+		
+		
+		
+		
+	}
+
+}

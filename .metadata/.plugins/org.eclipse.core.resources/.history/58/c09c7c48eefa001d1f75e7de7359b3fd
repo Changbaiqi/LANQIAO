@@ -1,0 +1,27 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 数列分段SectionII {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int N = sc.nextInt(); //多少个数字
+		int M = sc.nextInt(); //要分多少个组
+		
+		//用于存储输入的数据
+		int data[] = new int[N+1];
+		int l = 0; //用于记录最大值
+		for(int i=1 ; i <=N ; ++i) {
+			data[i] = sc.nextInt();
+			l = 
+		}
+		
+		
+	}
+
+}

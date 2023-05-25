@@ -1,0 +1,20 @@
+package lanqiao;
+
+import java.util.ArrayList;
+
+public class F123 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<Integer> data = new ArrayList<Integer>();
+		data.add(0);
+		for(int i=1 ; i <1000;++i) {
+			for(int x=1; x <=i ; ++x) {
+				data.add(x+data.get(data.size()-1));
+			}
+		}
+		System.out.println();
+	}
+
+}
