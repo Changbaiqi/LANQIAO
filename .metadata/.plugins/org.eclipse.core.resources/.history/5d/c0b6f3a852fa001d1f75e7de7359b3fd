@@ -1,0 +1,62 @@
+package lanqiao;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 和与乘积 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		//用于存输入的数据
+		long data[] = new long[n+1];
+		long map[] = new long[n+1];
+		//用于存大于1的数的对应数组下标
+		int no1[] = new int[n+1];
+		
+		int bigIndex=0;
+		for(int i =1 ; i <=n ; ++i) {
+			data[i] = sc.nextInt();
+			map[i] = map[i-1]+data[i];
+			if(data[i]!=1)
+				no1[++bigIndex] = i;
+		}
+		
+		//用于记录第i个数字之后有多少个1
+		long dif[]=new long[n+1];
+		for(int i =n,x = 0 ; i>=1 ;--i) {
+			
+			if(data[i]!=1) {
+				dif[i]=x;
+				x=0;
+			}else {
+				++x;
+			}
+		}
+		
+		
+		for(int l= 1 ; l <= n; ++l) {
+			long now = data[l];
+			//这里采用了Java自带的二分查找
+			int rr = Arrays.binarySearch(no1, 1,bigIndex+1,l);
+			
+			for(int x = rr ; x<=bigIndex ; ++x) {
+				int r= no1[rr];
+				now*=data[r];
+				
+				if(now>map[n])
+					break;
+				
+				long sum = map[r]-map[l-1];
+				if(sum<=now && now<=)
+				
+				
+			}
+		}	
+	}
+
+}

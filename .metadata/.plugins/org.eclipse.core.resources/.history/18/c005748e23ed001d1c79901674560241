@@ -1,0 +1,38 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ±³°üÓëÄ§·¨ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		int K = sc.nextInt();
+		int w[] = new int[N*2+1];
+		int v[] = new int[N*2+1]; 
+		for(int i= 0; i < N ; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+			w[i+1] = w[i]+K;
+			v[i+1] = v[i]*2;
+			
+		}
+		
+		int dp[][] = new int[N*2+1][M*2+1];
+		for(int y = 1 ; y <= N*2 ; ++y) {
+			//dp[i][1] =  dp[i][]
+			for(int x =1 ;x < M*2+1 ; ++x) {
+				if(x<w[y])
+					dp[y][x] = dp[y-1][x];
+				else
+					dp[y][x] = Math.max(dp[y-1][x-w[y]+v[y]], dp[y-1][x]);
+			}
+		}
+		
+		System.out.println(dp[N*2][M*2]);
+	}
+
+}

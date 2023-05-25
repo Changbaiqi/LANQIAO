@@ -1,0 +1,27 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ด๐าษ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc  = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		Student data[] = new Student[n];
+		for(int i=0 ; i < n ; ++i) {
+			
+		}
+		
+	}
+	
+	public static class Student{
+		int s = 0;
+		int a = 0;
+		int e = 0;
+	}
+}
+

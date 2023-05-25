@@ -1,0 +1,56 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 小明的背包6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt(); //一个有N件物品
+		int V = sc.nextInt(); //背包容量
+		
+		int w[] = new int[N+1];
+		int v[] = new int[N+1];
+		int s[] = new int[N+1];
+		
+		ArrayList<Integer> map[] = new ArrayList[N+1];
+		Arrays.fill(map, new ArrayList<Integer>());
+		
+		int root =0;
+		for(int i=1 ; i <=N ; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+			s[i] = sc.nextInt();
+			if(s[i]!=0)
+				map[s[i]].add(i);
+			else
+				root=i;
+		}
+		
+		int dp[][] = new int[N+1][V+1];
+			
+		
+	}
+	
+	public static void dfs(int dp[][],ArrayList<Integer> map[],int root,int N ,int V,int w[],int v[],int s[]) {
+		
+		for(int i=0 ; i<=map[root].size() ; ++i) {
+			int point = map[root].get(i);
+			
+			dfs(dp,map,point,N,V,w,v,s);
+			
+			for(int y=1;y<=N ; ++i) {
+				
+			}
+			
+			
+		}
+	}
+	
+	
+	
+}

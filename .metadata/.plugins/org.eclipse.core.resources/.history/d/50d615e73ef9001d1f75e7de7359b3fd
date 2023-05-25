@@ -1,0 +1,18 @@
+package lanqiao;
+
+import java.time.LocalDate;
+
+public class 完全日期 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LocalDate time = LocalDate.of(2001, 1, 1);
+		
+		for() {
+			
+			
+		}
+	}
+
+}

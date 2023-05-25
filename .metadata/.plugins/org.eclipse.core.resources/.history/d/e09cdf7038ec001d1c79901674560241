@@ -1,0 +1,22 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 好数之和 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int L = sc.nextInt();
+		int R= sc.nextInt();
+		long ans =0;
+		for(int i = L ; i <= R ; ++i) {
+			String str = String.valueOf(i);
+			if(str.contains("2022"))
+				ans+=i;
+		}
+		
+	}
+
+}

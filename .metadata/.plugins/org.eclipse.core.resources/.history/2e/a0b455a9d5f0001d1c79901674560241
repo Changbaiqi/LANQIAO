@@ -1,0 +1,37 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ด๐าษ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc  = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		Student data[] = new Student[n];
+		for(int i=0 ; i < n ; ++i) {
+			data[i] = new Student(sc.nextInt(),sc.nextInt(),sc.nextInt());
+		}
+		Arrays.sort(data,(x,y)->x.sum<y.sum);
+		
+		
+	}
+	
+	public static class Student{
+		int s = 0;
+		int a = 0;
+		int e = 0;
+		int sum = 0;
+		Student(int s,int a,int e){
+			this.s = s;
+			this.a = a;
+			this.e = e;
+			sum+=s+a+e;
+		}
+	}
+}
+

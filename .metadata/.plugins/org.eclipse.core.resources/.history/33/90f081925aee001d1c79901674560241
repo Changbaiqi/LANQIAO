@@ -1,0 +1,48 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 小明的背包4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+		int N = sc.nextInt(); // 数量
+		int V = sc.nextInt(); // 容量
+
+		int w[] = new int[2000001];
+		int v[] = new int[2000001];
+		int s[] = new int[2000001];
+		
+		int ans = 0;
+		for (int i = 1, x = 1,y=1; i <= N; ++i) {
+			int ww = sc.nextInt();
+			int vv = sc.nextInt();
+			int n = sc.nextInt();
+			ans += n;
+
+			int res = x;
+			for (; x < res + n; ++x) {
+				w[x] = ww;
+				v[x] = vv;
+				s[x] = n;
+			}
+			if(n==0) {
+				
+			}
+		}
+
+		int dp[] = new int[V + 1]; //有限制背包
+		
+		for (int y = 1; y <= ans; ++y) {
+			for (int x = 1; x <= V; ++x) {
+
+			}
+		}
+		
+		System.out.println(dp[ans][V]);
+
+	}
+
+}

@@ -1,0 +1,33 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+/**
+ * https://www.acwing.com/problem/content/6/
+ * @author 长白崎
+ *
+ */
+public class 多重背包问题III {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub、
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int V = sc.nextInt();
+		
+		int w[] = new int[N+1];
+		int v[] = new int[N+1];
+		int s[] = new int[N+1];
+		
+		for(int i=1 ; i <= N ; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+			s[i] = sc.nextInt();
+		}
+		
+		
+		
+	}
+
+}

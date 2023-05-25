@@ -1,0 +1,26 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ºÍÓë³Ë»ý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		long data[] = new long[n+1];
+		long map1[] = new long[n+1];
+		long no1[] = new long[n+1];
+		
+		int bigIndex=0;
+		for(int i =1 ; i <=n ; ++i) {
+			data[i] = sc.nextInt();
+			no1[++bigIndex] = i;
+		}
+		
+	}
+
+}

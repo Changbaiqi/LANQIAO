@@ -1,0 +1,44 @@
+package lanqiao;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class ÖÊÊı²ğ·Ö {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		slove(2019);
+
+	}
+
+	public static void slove(int num) {
+		HashSet<String> set = new HashSet<String>();
+		for (int y = 2; y <= 2019; ++y) {
+			if(check(y)) {
+				int dis = 2019-y;
+				if(dis==y)
+					continue;
+				if(check(dis)) {
+					int min = Math.min(dis, y);
+					int max = Math.max(dis, y);
+					String str = min+"-"+max;
+					System.out.println(str);
+					set.add(str);
+				}
+			}
+		}
+		System.out.println(set.size());
+	}
+	
+	public static boolean check(int num) {
+		
+		for (int i = 2; i <= Math.sqrt(num); ++i) {
+			if(num%i==0)
+				return false;
+		}
+		return true;
+	}
+
+}

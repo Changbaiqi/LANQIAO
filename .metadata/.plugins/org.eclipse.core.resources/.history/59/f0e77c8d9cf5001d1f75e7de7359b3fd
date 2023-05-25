@@ -1,0 +1,56 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 小明的背包6二练 {
+
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt(); //物品数量
+		int V = sc.nextInt(); //背包容量
+		
+		ArrayList<Integer> map[] = new ArrayList[N+1];
+		
+		int w[] = new int[N+1];
+		int v[] = new int[N+1];
+		int s[] = new int[N+1];
+		
+		for(int i= 1 ; i <= N ; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+			s[i] = sc.nextInt();
+			
+			map[s[i]].add(i); 
+		}
+		
+		
+		
+	}
+	
+	
+	public static long dfs(ArrayList<Integer> map[],int w[],int v[],int s[],int N,int V,int root,int dp[][]) {
+		
+		//假如选择了这个物品的话
+		for(int i=0 ;i <= V ; ++i) {
+			if(i>=w[root])
+				dp[root][i] = v[root];
+		}
+		
+		//这一层用于遍历当前结点下的分支，也就是物品
+		for(int y = V ; y>=0 ; --y) {
+			for(int x = 0 ; x <= y ; ++x) {
+				if(x-w[root]>=0) {
+					
+				}
+			}
+		}
+		
+	}
+
+}

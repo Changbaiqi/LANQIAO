@@ -1,0 +1,46 @@
+package lanqiao;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.StreamTokenizer;
+import java.util.Scanner;
+
+/**
+ * https://www.lanqiao.cn/problems/1175/learning/?page=1&first_category_id=1&sort=students_count&name=%E8%83%8C%E5%8C%85
+ * @author 长白崎
+ *
+ */
+public class 小明的背包2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Scanner sc = new Scanner(System.in);
+		
+		StreamTokenizer sc = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
+		
+		
+		
+		int N = sc.nextInt();
+		int V = sc.nextInt();
+		
+		int w[] = new int[N+1];
+		int v[] = new int[V+1];
+		
+		for(int i= 1; i <= N ; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+		}
+		
+		int dp[][] = new int[N+1][V+1];
+		for(int y=1 ; y <=N ; ++y) {
+			for(int x=1 ; x <= V ; ++x) {
+				if(x>=w[y]) 
+					dp[y][x] = Math.max(dp[y-1][x], dp[y][x-w[y]]+v[y]);
+				else
+					dp[y][x] = dp[y-1][x];
+			}
+		}
+		System.out.println(dp[N][V]);
+	}
+
+}

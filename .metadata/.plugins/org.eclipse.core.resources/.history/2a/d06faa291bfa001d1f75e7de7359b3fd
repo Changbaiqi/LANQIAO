@@ -1,0 +1,86 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 巧克力 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int x = sc.nextInt(); //吃巧克力天数
+		int n = sc.nextInt(); //种类
+		
+		C data[] = new C[n+1];
+		
+		data[0] = new C(0,0,99);
+		for(int i = 1 ; i <=n ; ++i) {
+			int a = sc.nextInt(); //单价
+			int b = sc.nextInt(); //保质期
+			int c = sc.nextInt(); //数量
+			data[i] = new C(a,b,c);
+		}
+		
+		Arrays.sort(data,1,n,(a,b)->{
+			return a.getA()-b.getA();
+		});
+		
+		
+		long ans =0;
+		int latemin=0;
+		for(int i=1; i <=n ; ++i) {
+			int min = Math.min(data[i].getB()-latemin<=0?0:data[i].getB()-latemin,data[i].getC());
+			int res = min+latemin;
+			
+			if(res>=x) {
+				ans+=(x-latemin)*data[i].getA();
+				System.out.println(ans);
+				return;
+			}
+			
+			
+		}
+		
+	}
+	
+	
+	static class C{
+		private int a;
+		private int b;
+		private int c;
+		
+		public C(int a, int b, int c) {
+			super();
+			this.a = a;
+			this.b = b;
+			this.c = c;
+		}
+		public void setA(int a) {
+			this.a = a;
+		}
+		public void setB(int b) {
+			this.b = b;
+		}
+		public void setC(int c) {
+			this.c = c;
+		}
+		public int getA() {
+			return a;
+		}
+		public int getB() {
+			return b;
+		}
+		public int getC() {
+			return c;
+		}
+		@Override
+		public String toString() {
+			return "C [a=" + a + ", b=" + b + ", c=" + c + "]";
+		}
+		
+		
+		
+	}
+
+}

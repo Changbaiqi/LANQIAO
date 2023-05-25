@@ -1,0 +1,42 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Ó£»¨ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int tts = 0;
+		int tte = 0;
+		int dis = 0;
+		
+		String Ts = sc.next();
+		tts = Integer.parseInt(Ts.split(":")[0])*60+Integer.parseInt(Ts.split(":")[1]);
+		String Te=sc.next();
+		tte = Integer.parseInt(Te.split(":")[0])*60+Integer.parseInt(Te.split(":")[1]);
+		dis = tte-tts;
+		int n = sc.nextInt();
+		
+		int w[] = new int[n+1];
+		int v[] = new int[n+1];
+		int s[] = new int[n+1];
+		for(int  i =1 ; i<= n ; ++i) {
+			w[i] = sc.nextInt();
+		}
+		
+		
+		int dp[] = new int[dis+1];
+		
+		for(int y =1 ; y <= dis ; ++y) {
+			for() {
+				
+			}
+		}
+		
+		
+	}
+
+}

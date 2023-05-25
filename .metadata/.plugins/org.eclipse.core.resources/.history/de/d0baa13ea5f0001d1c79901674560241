@@ -1,0 +1,40 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ¶þ²æÆ»¹ûÊ÷ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int Q = sc.nextInt();
+		
+		ArrayList<Integer>[] map = new ArrayList[N+1];
+		for(int i =0 ; i <=N ; ++i) map[i] = new ArrayList<>();
+		
+		
+		for(int i=1 ; i < N ; ++i) {
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			int s = sc.nextInt();
+			map[a].add(b);
+			map[b].add(a);
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	public static class Edge{
+		public int point;
+		
+	}
+}

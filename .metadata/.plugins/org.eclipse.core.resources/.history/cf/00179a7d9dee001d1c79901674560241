@@ -1,0 +1,25 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 求解01背包问题 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int T = sc.nextInt(); //背包容量
+		int N = sc.nextInt(); //物品
+		
+		
+		int w[] = new int[N+1];
+		int v[] = new int[N+1];
+		
+		
+		for() {
+			
+		}
+	}
+
+}

@@ -1,0 +1,34 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ÊØÍûÕßµÄÌÓÀë {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int M = sc.nextInt();
+		int S = sc.nextInt();
+		int T = sc.nextInt();
+		
+		int dp[] = new int[T+1];
+		
+		for(int i=1 ; i <=T; ++i) {
+			if(M>=10) {
+				dp[i]+=60;
+			}else {
+				dp[i]=dp[i-1];
+				M+=4;
+			}
+		}
+		
+		for(int i= 1; i <=T; ++i) {
+			
+		}
+		
+		
+		sc.close();
+	}
+
+}

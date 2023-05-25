@@ -1,0 +1,29 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 巧克力 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int x = sc.nextInt(); //吃巧克力天数
+		int n = sc.nextInt(); //种类
+		
+		int a[] = new int[n+1]; //单价
+		int b[] = new int[n+1]; //保质期
+		int c[] = new int[n+1]; //数量
+		
+		for(int i = 1 ; i <=n ; ++i) {
+			a[i] = sc.nextInt();
+			b[i] = sc.nextInt();
+			c[i] = sc.nextInt();
+		}
+		
+		
+		
+		
+	}
+
+}

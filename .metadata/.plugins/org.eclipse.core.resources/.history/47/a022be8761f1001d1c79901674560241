@@ -1,0 +1,40 @@
+package lanqiao;
+
+import java.util.Arrays;
+
+public class ÖÊÊý²ð·Ö {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int primes[] = new int[2019];
+		
+		for(int i=2,x=0; i<=2019; ++i) {
+			if(check(i)) {
+				primes[x]  = i;
+				++x;
+			}
+		}
+		
+		long dp[] = new long[2020];
+		Arrays.fill(dp, 1);
+		for(int y=0;y<306 ; ++y) {
+			for(int x =2019 ; x>=0; --x) {
+				if(y-primes[y]>=0)
+					dp[x] += dp[x-primes[y]];
+			}
+		}
+		System.out.println(dp[2019]);
+	}
+
+	
+	public static boolean check(int num) {
+		
+		for (int i = 2; i <= Math.sqrt(num); ++i) {
+			if(num%i==0)
+				return false;
+		}
+		return true;
+	}
+
+}

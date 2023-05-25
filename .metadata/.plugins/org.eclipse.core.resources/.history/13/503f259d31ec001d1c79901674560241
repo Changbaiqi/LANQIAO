@@ -1,0 +1,50 @@
+package lanqiao;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class 小球称重 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub、
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		
+		Set<Integer> a1 = new HashSet<>(); //嫌疑
+		Set<Integer> a2 = new HashSet<>(); //正常
+		
+		
+		for(int i = 0; i <M; ++i) {
+			int K = sc.nextInt();
+			int Ldata[] = new int[K];
+			int Rdata[] = new int[K];
+			for(int x = 0 ; x < K ; ++x) {
+				Ldata[x] = sc.nextInt();
+			}
+			for(int x = 0 ; x < K ; ++x) {
+				Rdata[x] = sc.nextInt();
+			}
+			String con = sc.next();
+			
+			if(con.equals("<")) {
+				
+			}else
+			if(con.equals(">")) {
+				
+			}else {
+				
+			}
+			
+			
+		}
+	}
+	
+	
+	public static void slove(Set<Integer> data) {
+		
+	}
+
+}

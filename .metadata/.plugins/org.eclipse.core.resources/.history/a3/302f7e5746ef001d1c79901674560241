@@ -1,0 +1,58 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class 没有上司的舞会 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int N= sc.nextInt(); //一共有几名职员
+		int happy[] = new int[N+1]; //存happy值
+		
+		//输入happy值
+		for(int i= 1; i <= N ; ++i) {
+			happy[i] = sc.nextInt();
+		}
+		
+		HashMap<Integer, ArrayList<Integer>> tree = new HashMap<Integer, ArrayList<Integer>>();
+		int jl[] = new int[N+1];
+		
+		while(true) {
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			jl[a] = b;
+			if(a==0 && b==0)
+				break;
+			if(tree.containsKey(a)) {
+				tree.get(a).add(b);
+			}else {
+				tree.put(a, new ArrayList<Integer>());
+				tree.get(a).add(b);
+			}
+		}
+		
+		int p = 0;
+		for(int i=1 ; i <=N ; ++i) {
+			if(jl[i]!=0)
+				continue;
+			p=i;
+			break;
+		}
+		
+		int dp[][] = new int[N+1][2];
+		
+		
+		dfs(dp,p);
+		
+	}
+	
+	public static void dfs(int dp[][],int i) {
+		
+	}
+	
+	
+
+}

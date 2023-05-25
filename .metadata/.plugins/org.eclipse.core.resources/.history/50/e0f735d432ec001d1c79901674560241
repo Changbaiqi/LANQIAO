@@ -1,0 +1,70 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class 小球称重 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub、
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		
+		Set<Integer> a1 = new HashSet<>(); //嫌疑
+		//Set<Integer> a2 = new HashSet<>(); //正常
+		
+		
+		for(int i = 0; i <M; ++i) {
+			int K = sc.nextInt();
+			ArrayList<Integer> Ldata = new ArrayList<>();
+			ArrayList<Integer> Rdata = new ArrayList<>();
+			for(int x = 0 ; x < K ; ++x) {
+				Ldata.add(sc.nextInt());
+			}
+			for(int x = 0 ; x < K ; ++x) {
+				Rdata.add(sc.nextInt());
+			}
+			String con = sc.next();
+			
+			if(con.equals("<")) {
+				slove1(a1,Ldata);
+			}else
+			if(con.equals(">")) {
+				slove1(a1,Rdata);
+			}else {
+				slove2(a1, Ldata, Rdata);
+			}
+			
+			
+			
+		}
+	}
+	
+	
+	public static void slove1(Set<Integer> aa,ArrayList<Integer> data) {
+		ArrayList<Integer> res = new ArrayList<Integer>();
+		
+		for(int num : data) {
+			if(aa.contains(num))
+				res.add(num);
+		}
+		aa.addAll(res);
+	}
+	
+	public static void slove2(Set<Integer> aa,ArrayList<Integer> Ldata,ArrayList<Integer> Rdata) {
+		for(int n : Ldata) {
+			if(aa.contains(n))
+				aa.remove(n);
+		}
+		for(int n : Rdata) {
+			if(aa.contains(n))
+				aa.remove(n);
+		}
+	}
+	
+
+}

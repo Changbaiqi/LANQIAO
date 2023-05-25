@@ -1,0 +1,15 @@
+package lanqiao;
+
+/**
+ * https://www.acwing.com/problem/content/6/
+ * @author 长白崎
+ *
+ */
+public class 多重背包问题III {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub、
+		
+	}
+
+}

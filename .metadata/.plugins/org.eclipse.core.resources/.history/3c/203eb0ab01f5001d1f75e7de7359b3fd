@@ -1,0 +1,55 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 金明的预算方案 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		int v[] = new int[m+1];
+		int p[] = new int[m+1];
+		int q[] = new int[m+1];
+		
+		ArrayList<Integer> map[] = new ArrayList[m+1];
+		for(int i =0 ; i <=m ; ++i) map[i] = new ArrayList<Integer>();
+		
+		
+		
+		for(int i=1; i <= m ; ++i) {
+			v[i] = sc.nextInt();
+			p[i] = sc.nextInt();
+			q[i] = sc.nextInt();
+			if(q[i]==0) {
+				map[0].add(i);
+			}else {
+				map[q[i]].add(i);
+			}
+		}
+		
+		
+		
+		
+		
+	}
+	
+	public static void dfs(int v[],int p[],int q[],ArrayList<Integer> map[],int index) {
+		
+		for(int i = 0 ; i <map[index].size() ; ++i) {
+			int res = map[index].get(i);
+			
+			dfs(v,p,q,map,res);
+			
+			for(int y =0; y <map[index].size() ; ++y ) {
+				
+			}
+		}
+	}
+
+}

@@ -1,0 +1,36 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 好数之和 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int L = sc.nextInt();
+		int R= sc.nextInt();
+		long ans =0;
+		for(int i = L ; i <= R ; ++i) {
+			//String str = String.valueOf(i);
+			int arr[] = new int[9];
+			int res =i;
+			int c=0;
+			while(res/10!=0) {
+				arr[c] = res%10;
+				res/=10;
+				if(c>=3)
+				c++;
+			}
+//			if(str.contains("2022"))
+//				ans+=i;
+		}
+		System.out.println(ans);
+		
+	}
+	
+//	public static check(int num) {
+//		int 
+//	}
+
+}

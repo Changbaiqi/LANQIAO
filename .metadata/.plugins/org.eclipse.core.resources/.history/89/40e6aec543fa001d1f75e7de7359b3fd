@@ -1,0 +1,45 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 和与乘积 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		
+		long data[] = new long[n+1];
+		long map1[] = new long[n+1];
+		long map2[] = new long[n+1];
+		
+		int maxIndex = 0;
+		for(int i= 1 ; i <=n; ++i) {
+			
+			int a= sc.nextInt();
+			data[i] = a;
+			map1[i] = map1[i-1]+a;
+			map2[i] = map2[i-1]*a;
+			if(map2[i]>=40000000000l) {
+				maxIndex=i;
+				break;
+			}
+		}
+		
+		//用于记录指定位置之后有多少1
+		long oneNum[] = new long[maxIndex+1];
+		for(int i=maxIndex, ans=0 ; i>=1 ; --i) {
+			if()
+		}
+		
+		
+		
+		
+		
+		
+	}
+
+}

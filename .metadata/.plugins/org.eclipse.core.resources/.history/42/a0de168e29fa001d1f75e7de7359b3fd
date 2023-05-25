@@ -1,0 +1,29 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ºÍÓë³Ë»ý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		long map1[] = new long[n+1];
+		long map2[] = new long[n+1];
+		map2[0] =1;
+		for(int i=1 ; i <=n; ++i) {
+			int a= sc.nextInt();
+			map1[i] = map1[i-1]+a;
+			map2[i] = map2[i-1]*a;
+		}
+		long ans =0;
+		for(int y=1 ; y <=n ; ++y) {
+			for(int x =y ; x <=n ; ++x) {
+				if(map1[x]-map1[y-1]==map2[x]/map[y-1])
+			}
+		}
+	}
+
+}

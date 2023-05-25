@@ -1,0 +1,62 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 背包与魔法 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		int K = sc.nextInt();
+		int w[] = new int[N + 1];
+		int v[] = new int[N + 1];
+
+		int mw[] = new int[N + 1];
+		int mv[] = new int[N + 1];
+
+		for (int i = 1; i <= N; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+			mw[i] = w[i] + K;
+			mv[i] = v[i] * 2;
+
+		}
+
+		int dp[][] = new int[N + 1][M + 1];
+		int mdp[][] = new int[N + 1][M + 1];
+
+		for (int y = 1; y <= N; ++y) {
+			// dp[i][1] = dp[i][]
+			for (int x = 1; x <= M; ++x) {
+				
+				//前i件不使用魔法与当前件都不适用魔法
+				if (x < w[y]) {
+					dp[y][x] = dp[y - 1][x];
+					mdp[y][x] = mdp[y-1][x];
+				}
+				else {
+					dp[y][x] = Math.max(dp[y - 1][x - w[y]] + v[y], dp[y - 1][x]);
+					//前i件使用魔法，当前件不使用魔法
+					mdp[y][x] = Math.max(mdp[y - 1][x - w[y]] + v[y], mdp[y-1][x]);
+				}
+				
+				
+				if (x < mw[y]) { 
+					mdp[y][x] = mdp[y - 1][x];
+				}else {
+					//前i件不使用魔法，当前件使用魔法
+					mdp[y][x] = Math.max(Math.max(dp[y - 1][x - mw[y]] + v[y], mdp[y-1][x]),);
+				}
+				
+				
+				
+			}
+		}
+
+		System.out.println(Math.max(dp[N][M],mdp[N][M]));
+	}
+
+}

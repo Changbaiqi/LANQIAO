@@ -1,0 +1,45 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ÊÖ»úºÅÂë {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int L = sc.nextInt();
+		int R = sc.nextInt();
+	}
+	
+	
+	public static long slove(int num) {
+		int bit[] = new int[13];
+		
+		int i =0;
+		while(num!=0) {
+			bit[++i] = num%10;
+			num/=10;
+		}
+		
+		
+		
+	}
+	
+	
+	public static long dfs(int dp[][],int bit[],int index,int preNum,boolean limit,boolean zero) {
+		if(index==0)
+			return 1;
+		
+		if(!limit && !zero&& dp[index][preNum]!=-1)
+			return dp[index][preNum];
+		
+		int maxNum = limit?bit[index]:9;
+		for() {
+			
+		}
+		
+		return 1;
+	}
+
+}

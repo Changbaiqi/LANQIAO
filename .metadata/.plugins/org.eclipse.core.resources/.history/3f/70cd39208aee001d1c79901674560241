@@ -1,0 +1,46 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 小明的背包5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int  N = sc.nextInt();
+		int V  = sc.nextInt();
+		
+		int w[][] = new int[101][101];
+		int v[][] = new int[101][101];
+		int s[] = new int[101];
+		int group =0;
+		for(int i =1 ; i <= N+1 ;) {
+			++group;
+			s[group] = sc.nextInt();
+			for(int y =1; y <= s[group]; ++y) {
+				w[group][y] = sc.nextInt();
+				v[group][y] = sc.nextInt();
+				++i;
+			}
+		}
+		
+		int dp[] = new int[V+1];
+		
+			
+		//for(int y= 1 ; y <=N ; ++y) {	
+			for(int x=group ; x>=1 ; --x) {
+				for(int z=s[group]; z>=1 ; --z) {
+					dp[x] = Math.max(dp[x], dp[x-w[group][z]]);
+					//++y;
+				}
+				//--group;
+			//}
+		}
+		System.out.println(dp[V]);
+		
+		
+		
+	}
+
+}

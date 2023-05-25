@@ -1,0 +1,17 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Ó£»¨ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String Ts = sc.next();
+		String Te=sc.next();
+		int n = sc.nextInt();
+	}
+
+}

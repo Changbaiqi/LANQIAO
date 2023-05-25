@@ -1,0 +1,24 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ÖÊÊı²ğ·Ö {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		slove(2019);
+		
+	}
+	
+	
+	public static void slove(int num) {
+		for(int i=2; i <=Math.sqrt(num);++i) {
+			
+			while(num%2==0) {
+				
+			}
+		}
+	}
+
+}

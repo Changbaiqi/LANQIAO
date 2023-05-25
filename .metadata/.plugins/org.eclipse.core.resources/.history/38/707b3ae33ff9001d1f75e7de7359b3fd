@@ -1,0 +1,31 @@
+package lanqiao;
+
+import java.time.LocalDate;
+
+public class 完全日期 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		LocalDate time = LocalDate.of(2001, 1, 1);
+
+		long ans = 0;
+		for (; !time.isAfter(LocalDate.of(2021, 12, 31)); time = time.plusDays(1)) {
+
+			int res = year + month + day;
+			int sqr = (int) Math.sqrt(res);
+			if (res == sqr * sqr) {
+				++ans;
+			}
+		}
+		System.out.println(ans);
+	}
+
+	public static boolean check(LocalDate time) {
+
+		int year = time.getYear();
+		int month = time.getMonthValue();
+		int day = time.getDayOfMonth();
+	}
+
+}

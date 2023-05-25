@@ -1,0 +1,34 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class 和与乘积 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		
+		//用于存输入的数据
+		long data[] = new long[n+1];
+		//用于存大于1的数的对应数组下标
+		long no1[] = new long[n+1];
+		
+		int bigIndex=0;
+		for(int i =1 ; i <=n ; ++i) {
+			data[i] = sc.nextInt();
+			if(data[i]!=1)
+				no1[++bigIndex] = i;
+		}
+		
+		
+		for(int i= 1 ; i <= n; ++i) {
+			long now = data[i];
+			long r = Arrays.binarySearch(no1, 1,bigIndex+1,i);
+			
+		}	
+	}
+
+}

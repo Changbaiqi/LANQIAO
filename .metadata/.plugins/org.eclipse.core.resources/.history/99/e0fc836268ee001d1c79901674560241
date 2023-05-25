@@ -1,0 +1,35 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 小明的背包4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+		int N = sc.nextInt(); // 数量
+		int V = sc.nextInt(); // 容量
+		
+		int w[] = new int[1001];
+		int v[] = new int[1001];
+		int s[] = new int[1001];
+		
+		for(int i=1 ; i <= N ; ++i) {
+			w[i] = sc.nextInt();
+			v[i] = sc.nextInt();
+			s[i] = sc.nextInt();
+		}
+		
+		
+		
+		int dp[] = new int[V+1];
+		for() {
+			
+		}
+		
+		
+	}
+
+}

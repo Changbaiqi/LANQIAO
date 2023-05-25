@@ -1,0 +1,36 @@
+package lanqiao;
+
+public class ´¿ÖÊÊı {
+
+ 	static boolean map[]= {false,false,true,true,false,true,false,true,false,false};
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		for(int i=1; i <=20210605; ++i) {
+			
+		}
+	}
+	
+	
+	public static boolean slove(int num) {
+		if(num==1)
+			return false;
+		
+		for(int i=2 ;i<=Math.sqrt(num);++i) {
+			if(num%10==0)
+				return false;
+		}
+		
+		
+		int res=0;
+		while(num!=0) {
+			res= num%10;
+		}
+		
+		
+		
+		return true;
+	}
+
+}

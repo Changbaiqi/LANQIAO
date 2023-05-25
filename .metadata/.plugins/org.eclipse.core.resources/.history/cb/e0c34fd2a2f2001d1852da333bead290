@@ -1,0 +1,82 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class windy数 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt();
+		//int b = sc.nextInt();
+	
+		int bit[] = new int[12];
+		int i =0;
+		while(a!=0) {
+			bit[++i]=a%10;
+			a/=10;
+		}
+		
+		System.out.println(i);
+//		System.out.println(dp(a));
+//		System.out.println(dp(b));
+//		
+	}
+	
+	public static long dfs(int dp[][]/*数位dp*/,int bit[]/*存储每位数*/,boolean limit/*是否限制高位*/,int sumBit/*一共多少位*/,int now/*当前位数*/) {
+		
+		if(limit) {
+			for() {
+				
+			}
+		}
+		
+	}
+	
+	public static long dp(int num) {
+		int bit[] = new int[12];
+		
+		//位数
+		int bitAns = 0;
+		
+		while(num!=0) {
+			++bitAns;
+			bit[bitAns]= num%10;
+			num/=10;
+		}
+		
+		long dp[][] = new long[10][bitAns+1];
+		
+		//初始化当只有一位数的时候，可以填充的方案
+		for(int i = 0;i <=9; ++i) {
+			dp[i][1] = 1;
+		}
+		
+		for(int i=2;i<=bitAns;++i) {
+			for(int y =0;y<=9;++y) {
+				for(int k =0;k<=9;++k) {
+					if(Math.abs(y-k)>=2)
+						dp[y][i] +=dp[k][i-1];
+				}
+				
+			}
+		}
+		
+		
+		
+		for(int i =bitAns; i>=1;--i) { //循环最高位
+			
+		}
+		
+		
+		long ans=0;
+		for(int i= 0 ; i <=9;++i) {
+			ans+=dp[i][bitAns];
+		}
+		
+		return ans;
+		//int dp[][] = new int[10][]; 
+	}
+
+}

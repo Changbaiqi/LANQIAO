@@ -1,0 +1,49 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+/**
+ * https://www.luogu.com.cn/problem/P3842
+ * @author ³¤°×Æé
+ *
+ */
+public class Ïß¶Î {
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		int n = sc.nextInt();
+		int L[] = new int[n+1];
+		int R[] = new int[n+1];
+		
+		for(int i= 1 ; i <=n ; ++i) {
+			L[i] = sc.nextInt();
+			R[i] = sc.nextInt();
+		}
+		
+		int dp[][] = new int[n+1+1][2];
+		
+		R[0] =1;
+		L[0] = 1;
+//		dp[0][0] = 1;
+//		dp[0][1] =1;
+//		
+		for(int y =1 ; y<=n; ++y) {
+				int LtoL = Math.abs(R[y]-L[y-1])+Math.abs(R[y]-L[y])+1;
+				int RtoL = Math.abs(R[y]-R[y-1])+Math.abs(R[y]-L[y])+1;
+				dp[y][0] = Math.min(LtoL+dp[y-1][0], RtoL+dp[y-1][1]);
+				
+				int LtoR = Math.abs(R[y]-L[y-1])+1;
+				int RtoR = Math.abs(R[y-1]-L[y])+Math.abs(R[y]-L[y]) +1;
+				dp[y][1] = Math.min(LtoR+dp[y-1][0], RtoR+dp[y-1][1]);
+		}
+		
+		System.out.println(Math.min(dp[n][0],dp[n][1]));
+		
+	}
+
+}
