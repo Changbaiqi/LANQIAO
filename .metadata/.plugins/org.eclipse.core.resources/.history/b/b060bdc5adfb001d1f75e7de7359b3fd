@@ -1,0 +1,39 @@
+package lanqiao;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+/**
+ * https://www.lanqiao.cn/problems/292/learning/?page=1&first_category_id=1&sort=students_count&tags=%E5%9B%BD%E8%B5%9B
+ * @author 20840
+ *
+ */
+public class 最小公倍数 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int  N = sc.nextInt();
+		
+		
+		BigInteger ans = BigInteger.ONE;
+		for(int i = 1 ; i <=N ; ++i) {
+			ans = lcd(ans,BigInteger.valueOf(i));
+		}
+		System.out.println(ans);
+	
+	}
+	
+	
+	//大数字求最小公倍数
+	public static BigInteger lcd(BigInteger a,BigInteger b) {
+		return a.multiply(b).divide(gcd(a,b));
+	}
+	
+	//大数字求最大公因数
+	public static BigInteger gcd(BigInteger a,BigInteger b) {
+		return a.gcd(b);
+	}
+	
+
+}

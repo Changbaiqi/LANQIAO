@@ -1,0 +1,18 @@
+package lanqiao;
+
+import java.math.BigInteger;
+
+public class ½×³ËÔ¼Êý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BigInteger ans=BigInteger.ONE;
+		long sum =0;
+		for(int i=1; i <=100 ; ++i) {
+			ans= ans.multiply(BigInteger.valueOf(i));
+			++sum;
+		}
+		System.out.println(ans.toString());
+	}
+
+}

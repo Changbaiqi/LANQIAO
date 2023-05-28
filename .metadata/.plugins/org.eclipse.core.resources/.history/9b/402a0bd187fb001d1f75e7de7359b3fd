@@ -1,0 +1,14 @@
+package lanqiao;
+
+import java.math.BigInteger;
+
+public class ½×³ËÔ¼Êý {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int data[] = new int[101];
+		
+		
+	}
+
+}

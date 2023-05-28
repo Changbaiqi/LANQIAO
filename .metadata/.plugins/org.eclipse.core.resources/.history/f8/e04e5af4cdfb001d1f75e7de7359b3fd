@@ -1,0 +1,17 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Kevin喜欢零简单版本 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		//一共多少组测试条例
+		int T = sc.nextInt();
+		
+		
+	}
+
+}

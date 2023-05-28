@@ -1,0 +1,31 @@
+package lanqiao;
+
+import java.math.BigInteger;
+import java.util.BitSet;
+import java.util.Scanner;
+
+public class 最小公倍数 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int  N = sc.nextInt();
+		
+		BigInteger big = BigInteger.valueOf(N);
+	
+	}
+	
+	
+	//大数字求最小公倍数
+	public static BigInteger lcd() {
+		
+	}
+	
+	//大数字求最大公因数
+	public static BigInteger gcd(int a,int b) {
+		return BigInteger.valueOf(a).gcd(BigInteger.valueOf(b));
+	}
+	
+
+}

@@ -1,0 +1,82 @@
+package lanqiao;
+
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Kevin喜欢零简单版本 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		//一共多少组测试条例
+		int T = sc.nextInt();
+		
+		for(int i= 1; i <=T ; ++i) {
+			int n = sc.nextInt(); //序列长度
+			long k = sc.nextLong(); //后导零数量
+			
+			
+ 			Num data[] = new Num[n+1]; //用于存储数字
+ 			long p2[] = new long[n+1]; //用于存储2的数量的前缀和
+ 			long p5[] = new long[n+1]; //用于存储5的数量的前缀和
+ 			
+ 			for(int x =1 ; x <=n ; ++x) {
+ 				long a = sc.nextLong();
+ 				long fiveAns = modAns(a,5);
+ 				long twoAns = modAns(a,2);
+ 				data[x] = new Num(a, fiveAns, twoAns);
+ 				p2[x] = p2[x-1]+twoAns;
+ 				p5[x] = p5[x-1]+fiveAns;
+ 				
+ 				for(int i=1 ; i <=n ; ++i) {
+ 					
+ 				}
+ 				
+ 				
+ 			}
+ 			
+ 			
+ 			
+			
+			
+		}
+		
+		
+		
+		sc.close();
+	}
+	
+	//余数数量
+	public static long modAns(long x,long mod) {
+		long ans = 0;
+		while(x%mod==0) {
+			x/=mod;
+			++ans;
+		}
+		return ans;
+	}
+	
+	
+	
+	public static void slove() {
+		
+	}
+	
+	
+	public static class Num{
+		long num;
+		long five;
+		long two;
+		public Num(long num, long five, long two) {
+			super();
+			this.num = num;
+			this.five = five;
+			this.two = two;
+		}
+		
+	}
+}
+

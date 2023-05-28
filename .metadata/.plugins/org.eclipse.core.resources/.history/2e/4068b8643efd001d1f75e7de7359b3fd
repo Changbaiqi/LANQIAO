@@ -1,0 +1,40 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 翻转括号序列 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		
+		
+		String str = sc.next();
+		
+		for(int i= 1 ; i <= m; ++i) {
+			int c = sc.nextInt();
+			//操作2
+			if(c==2) {
+				int index = sc.nextInt();
+				long ans=0;
+				for(int x =0 ; x<str.length(); ++x) {
+					if(str.charAt(x)=='(')
+						++ans;
+					else if(str.charAt(x)=='(')
+						--ans;
+
+				}
+			}else if(c==1) {//操作1
+				
+			}
+			
+			
+		}
+		
+	}
+
+}

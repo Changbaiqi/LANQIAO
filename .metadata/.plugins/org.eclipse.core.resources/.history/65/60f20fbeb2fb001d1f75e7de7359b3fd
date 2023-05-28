@@ -1,0 +1,19 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class Ð¡ÊýnÎ» {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int a= sc.nextInt();
+		int b =sc.nextInt();
+		int c = sc.nextInt();
+// 		String data = String.format("%1.1000000000f",(float)a/b);
+//		data = data.substring(2);
+//		System.out.println(data.substring(c));
+		System.out.println();
+	}
+
+}

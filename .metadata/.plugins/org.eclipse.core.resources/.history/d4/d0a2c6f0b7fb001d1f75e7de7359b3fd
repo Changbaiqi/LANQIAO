@@ -1,0 +1,21 @@
+package lanqiao;
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Ð¡ÊýnÎ» {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int a= sc.nextInt();
+		int b =sc.nextInt();
+		int n = sc.nextInt();
+		
+		BigDecimal bd = BigDecimal.valueOf(a).setScale(1000000000);
+		
+		System.out.println((double)a/b);
+	}
+
+}

@@ -1,0 +1,10 @@
+package lanqiao;
+
+public class 最小公倍数 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

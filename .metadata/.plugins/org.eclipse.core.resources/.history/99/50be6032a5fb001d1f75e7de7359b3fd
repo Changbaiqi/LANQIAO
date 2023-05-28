@@ -1,0 +1,58 @@
+package lanqiao;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+/**
+ * https://www.lanqiao.cn/problems/1020/learning/?page=1&first_category_id=1&sort=students_count&tags=%E5%9B%BD%E8%B5%9B
+ * @author 长白崎
+ *
+ */
+public class 阶乘约数 {
+
+    public static void main(String[] args) {
+        //一下为测试条例
+        Scanner sc  = new Scanner(System.in);
+        //输入需要测试的的阶乘数字
+        int num = sc.nextInt();
+        System.out.println(slove(num));
+    }
+
+
+    //
+    public  static  long slove(int num){
+        //这里用我们将传过来的数字作为我们需要开的数组大小，其实这里的数组开的大小就是我们需要阶乘的对应的数字的
+        int data[] = new int[num+1];
+        for(int i = 1 ; i <=num ; ++i){
+            slove2(num,data);
+        }
+
+        long ans =1;
+        for(int i =1 ; i <=num ; ++i){
+            if(data[i]==0) //这里过滤掉相应乘数不能约的数（也就是能 约的数字的数量为0的数）
+                continue;
+            ans*=(data[i]+1); //这里一定要注意+1
+        }
+        return ans;
+    }
+    //这个是主要的求当前阶乘的数字能分解出多少个数字
+    public static void slove2(int num,int data[]){
+
+
+        //这里的循环用于求是否是质数的那个模板，详细可以看看判断是否是质数的模板
+        for(int i= 2 ; i <=Math.sqrt(num) ; ++i){
+
+            //这里是判断是否不为质数，如果不是质数那么就进行分解
+            if(num%i==0){
+                while(num%i==0){
+                    num/=i;
+                    ++data[i]; //这一步的作用就是用于统计能分解成多少个数
+                }
+            }
+        }
+        //这里判断最后分解完之后最好分解剩下的是否还能凑成一个质数，如果能那么也能算作可约数字
+        if(num>1){
+            ++data[num];
+        }
+    }
+
+}

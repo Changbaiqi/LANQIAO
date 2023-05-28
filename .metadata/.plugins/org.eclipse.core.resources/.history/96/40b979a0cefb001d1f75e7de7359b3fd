@@ -1,0 +1,41 @@
+package lanqiao;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Kevin喜欢零简单版本 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		//一共多少组测试条例
+		int T = sc.nextInt();
+		
+		for(int i= 1; i <=T ; ++i) {
+			int n = sc.nextInt(); //序列长度
+			int k = sc.nextInt(); //后导零数量
+			
+			Queue<Num> qu = new LinkedList<Num>();
+			qu.add(new Num())
+			
+		}
+		
+		
+	}
+	
+	public static class Num{
+		int num;
+		int five;
+		int two;
+		public Num(int num, int five, int two) {
+			super();
+			this.num = num;
+			this.five = five;
+			this.two = two;
+		}
+		
+	}
+}
+
