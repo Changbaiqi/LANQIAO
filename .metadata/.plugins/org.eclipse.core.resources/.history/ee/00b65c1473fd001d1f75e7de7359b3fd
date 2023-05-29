@@ -1,0 +1,23 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class ื฿รินฌ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		
+		int state[][] = new int[][];
+		
+	}
+	
+	
+	public static void bfs(int state[][],int startX,int startY,int endX,int endY) {
+		
+	}
+
+}

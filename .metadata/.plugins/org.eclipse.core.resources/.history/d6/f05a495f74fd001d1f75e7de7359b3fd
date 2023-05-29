@@ -1,0 +1,58 @@
+package lanqiao;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class 走迷宫 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		
+		//迷宫行走状态
+		int state[][] = new int[N+1][M+1];
+		
+		//地图
+		int map[][] = new int[N+1][M+1];
+		for(int y = 1 ; y <=N ; ++y) {
+			for(int x=1 ; x <=M ; ++x) {
+				map[y][x] = sc.nextInt();
+			}
+		}
+		
+		int x1 = sc.nextInt();
+		int y1 = sc.nextInt();
+		int x2 = sc.nextInt();
+		int y2 = sc.nextInt();
+		
+		System.out.println(bfs(state,map,x1,y1,x2,y2));
+		
+		
+	}
+	
+	
+	public static long bfs(int state[][],int map[][],int startX,int startY,int endX,int endY) {
+		Queue<int[]> qu = new LinkedList<>();
+		
+		//加入起点
+		qu.add(new int[] {startX,startY,0});
+		while(!qu.isEmpty()) {
+			
+			//出队
+			int xy[] = qu.poll();
+			
+			//判断是否为终点
+			if(xy[0]==endX && xy[1]==endY) {
+				return xy[2];
+			}
+			
+		}
+		
+	}
+
+}

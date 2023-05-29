@@ -1,0 +1,21 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 最小权值 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		long dp[] = new long[2022];
+	}
+	
+	
+	public static long dfs(long dp[],int root) {
+		
+		for(int L= 0; L <=root ; ++L) {
+			int R = 2021-L
+		}
+	}
+
+}

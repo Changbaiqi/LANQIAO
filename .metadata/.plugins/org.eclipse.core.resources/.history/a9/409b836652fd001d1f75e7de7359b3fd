@@ -1,0 +1,33 @@
+package lanqiao;
+
+import java.util.Scanner;
+
+public class 最小权值 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		long dp[] = new long[2022];
+		dfs(dp, 2021);
+		System.out.println(dp[2021]);
+	}
+
+	public static void dfs(long dp[], int root) {
+		//结点序号起始就是1
+		if (root == 0 || dp[root]>0)
+			return;
+		
+		if (root == 1) {
+			dp[root] = 1;
+		} else {
+			dp[root] = Long.MAX_VALUE;
+			for (int L = 0; L <= root - 1; ++L) {
+				int R = root - L;
+				dfs(dp, R);
+				dfs(dp, L);
+				dp[root] = Math.min(dp[root], 1 + 2 * dp[L] + 3 * dp[R] + L * L * R);
+			}
+		}
+	}
+
+}

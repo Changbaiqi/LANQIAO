@@ -1,0 +1,41 @@
+package lanqiao;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ¹ØÑº×ï·¸ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		CT data[] = new CT[N+1];
+		for(int i = 1;i <=N ; ++i) {
+			data[i] = new CT(sc.nextInt(), sc.nextInt(), sc.nextInt());
+		}
+		Arrays.sort(data,1,N,(x,y)->{
+			return x.c-y.c;
+		});
+		
+		System.out.println();
+	}
+	
+	
+	
+	
+	static class CT{
+		int a;
+		int b;
+		int c;
+		public CT(int a, int b, int c) {
+			super();
+			this.a = a;
+			this.b = b;
+			this.c = c;
+		}
+		
+	}
+
+}
