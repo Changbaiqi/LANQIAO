@@ -1,30 +1,39 @@
 package lanqiao;
+import java.awt.datatransfer.StringSelection;
+import java.awt.Toolkit;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
+public class 好数之和 extends java.io.CharArrayWriter {
 
-/**
- * https://www.lanqiao.cn/problems/2226/learning/?page=1&first_category_id=1&sort=students_count&name=%E5%A5%BD%E6%95%B0
- * @author 长白崎
- *
- */
-public class 好数之和 {
+    public static void main(String[] args) { new 好数之和().run(); }
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+    int N = (int)1e9, M = N / 666;
 
-		int L = sc.nextInt();
-		int R = sc.nextInt();
-		long ans = 0;
-		HashSet<Long> data = new HashSet<Long>();
-	}
-	
-	public static void dfs(int len,int data) {
-		for(int i= 0 ; i <=9 ; ++i) {
-			
-		}
-	}
+    String target = "2022";
 
+    void run() {
+        append("import java.util.Scanner;\n\n").
+        append("public class Main {\n\n").
+        append("    public static void main(String[] args) { new Main().run(); }\n\n").
+        append("    void run() {\n").
+        append("        Scanner in = new Scanner(System.in);\n").
+        append("        int L = in.nextInt(), R = in.nextInt();\n").
+        append("        System.out.print(calc(R) - calc(L - 1));\n    }\n\n").
+        append("    long[] sum = { 0");
+        Long sum = 0L;
+        for (int i = 1; i <= N;) {
+            for (int j = 1; j < M; ++j, ++i)
+                if (Integer.toString(i).contains(target)) sum += i;
+            append(", ").append(sum.toString()).append('L');
+        }
+        append(" };\n\n").
+        append("    long calc(int n) {\n").
+        append("        long res = sum[n / " + M + "];\n").
+        append("        for (int i = n / " + M + " * " + M + "; i <= n; ++i)\n").
+        append("            if (Integer.toString(i).contains(\"" + target + "\")) res += i;\n").
+        append("        return res;\n    }\n}");
+        Toolkit.getDefaultToolkit().
+                getSystemClipboard().
+                setContents(
+                        new StringSelection(this.toString()), null);
+    }
 }
