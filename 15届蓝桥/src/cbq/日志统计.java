@@ -1,5 +1,7 @@
 package cbq;
 
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -10,7 +12,7 @@ import java.util.Scanner;
  * @class ["双指针"]
  */
 public class 日志统计 {
-
+	static PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
@@ -54,11 +56,6 @@ public class 日志统计 {
 				System.out.println(arr.get(i)[1]);
 			}
 		}
-//		
-//		for(int i = 0;i<=100002;++i) {
-//			if(map[i])
-//				System.out.println(i);
-//		}
 	}
 
 }

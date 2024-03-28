@@ -3,6 +3,8 @@ package cbq;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 /**
@@ -13,7 +15,7 @@ import java.util.StringTokenizer;
  *
  */
 public class ΩËΩÃ “503 {
-
+	static PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// TODO Auto-generated method stub
 
@@ -52,11 +54,13 @@ public class ΩËΩÃ “503 {
 		
 		for (int i = r; i < m; ++i) {
 			if (!check(data, d, s, t, i+1)) {
-				System.out.println(-1);
-				System.out.println(i + 1);
+				out.println(-1);
+				out.println(i + 1);
 				return;
 			}
 		}
+		out.flush();
+		out.close();
 	}
 
 	static boolean check(long data[], long d[], int s[], int t[], int mid) {
